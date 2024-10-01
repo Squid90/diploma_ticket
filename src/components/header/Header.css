@@ -1,0 +1,197 @@
+.header {
+    width: 1920px;
+    height: 985px;
+}
+
+.header_background {
+    width: 1920px;
+    height: 985px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.header_background::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background-image: url("https://s3-alpha-sig.figma.com/img/4d39/3515/552ec05b23bca029a735fc146cf0ebff?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=L~VEzdmrYy2XlJ0D~GzJ12fN4iLXBv6ZFoJjRbeM2M~r2rQ5pblxsBCt9XMDyqRHwHIuKoA--clww8q5mlG22piOWc3d66ghvi8yD4NWOjzHPOgWKofqX1qB9woK8HK8SY9UTBEZEVPt~CpSzkLwSxycc8LH9NF1-PpJ5p9saNchABBxcWesM6cT4OnogRLx8UtqFdrweTP0jiyaGFj2fAwBlSF7unaPHIqCvsawQcZ86shHvE~rsyA1fuZYET9LZrsIFOnhbIpyEKcko9O31LEOWffybom9D5ELUtgsYCmcZPFv2qU7CxIiOcNdOnOqzST8NYkCkMEJR1NwkwCFGg__");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 2085px;
+    height: 1171px;
+    transform: scale(-1, 1);
+    top: -45px;
+}
+
+
+.header__logo {
+    width: 1920px;
+    height: 64px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.logo__txt {
+    position: absolute;
+    width: 104px;
+    height: 49px;
+    top: 15px;
+    left: 258px;
+    font-family: "Roboto";
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 42.19px;
+    text-align: left;
+    color: rgba(229, 229, 229, 1);
+}
+
+.header__toolbar {
+    width: 1919px;
+    height: 94px;
+    background-color: rgba(41, 41, 41, 1);
+    display: flex;
+    align-items: center;
+}
+
+.toolbar-list {
+    list-style: none;
+    display: flex;
+    justify-content:left;
+    padding-left: 258px;
+}
+  
+
+li {
+    list-style-type: none;
+    padding-right: 83px;
+}
+  
+a {
+    text-decoration: none;
+    font-family: "Roboto";
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 35.16px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1)
+}
+
+.header__forms {
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    width: 100%;
+    height: 574px;
+    padding-left: 348px;
+    align-self: flex-end;
+}
+
+.header__slogan {
+    width: 506px;
+    height: 170px;
+    top: 573px;
+    left: 348px;
+ 
+
+    font-family: "Roboto";
+    font-size: 72px;
+    font-weight: 100;
+    line-height: 84.38px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1)
+}
+
+#span__slogan {
+    font-family: "Roboto";
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 84.38px;
+    text-align: left;
+
+}
+
+.search__form {
+    width: 729px;
+    height: 574px;
+    top: 411px;
+    left: 958px;
+    background: rgba(41, 41, 41, 0.8);
+    
+}
+
+
+.search__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    box-sizing: border-box;
+    padding: 100px 30px 0 30px;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.header__label {
+    width: 231px;
+    height: 43px;
+    font-family: "Roboto";
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 35.16px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+}
+
+.city-select, .date-input {
+    width: 322px;
+    height: 60px;
+    border: 0;
+    padding: 0;
+    font-family: "Roboto";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.09px;
+    text-align: left;
+    border-radius: 5px;
+}
+
+.switch-btn-city {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    background-image: url('https://s3-alpha-sig.figma.com/img/75e4/a68c/a60db9adb307af0d4196fdf6b768b43d?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=o4abiRnp34-~XFT2x6FvXwc0hAIdobO4kQDXLnkSOXe68TskRurBCszt45iwKdPf9~nz9D0Enc6aEVj8vE1aHtHCtvUWYupyVH2hIQlAmU56TBgghtQlNO22Oer561Hq~Id6jZIbGhcYpBa7VSmuruiE7G5O3-Q9Q9LArqVvdpKNq8O5PQsx47a8guXU-RP7YQ1CGcuzTGqYRazZ0kXiF5lS0TDML8uS0zNd52iWffMJjXbdC2ItomeRT1lMLrhykIVw7msOGON8YQIe-PCcrneNWxwMqU5wpOteju8UuQroYBosOaVFdLb~JuG~tuWNyV5~HJYtBpETPJp4vev8pQ__');
+    background-size: cover;
+}
+.switch-btn-date {
+    width: 24px;
+    height: 24px;
+}
+
+.search-btn {
+    width: 323px;
+    height: 60px;
+    border-radius: 5px;
+    font-family: "Roboto";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.13px;
+    text-align: center;
+    background: rgba(255, 168, 0, 1);
+    align-self: flex-end;
+}
+
+.search-btn:hover {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.search-btn:active {
+    background: rgba(0, 0, 0, 0);
+    color: rgba(255, 168, 0, 1);
+    border: 1px solid rgba(255, 168, 0, 1)
+}
