@@ -11,7 +11,7 @@ export const Header = () => {
     <>
       <div className='header'>
         <div className='header_background'>
-          <div>
+          <div id='headerLogo'>
             < Logo />
             <div className='header__toolbar'>
               <Toolbar items = {dataMenu} />
