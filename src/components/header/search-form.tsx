@@ -1,12 +1,13 @@
+import { Link } from "react-router-dom"
 
 export const Search__form = () => {
   return (
     <>
-    <form className='search__form'>
+    <form className='search__form_main'>
         <div>
-            <label className='header__label'>Направление</label>
-            <div className='form-row'>
-                <select className='city-select'>
+            <label className='header__label_main'>Направление</label>
+            <div className='form-row_main'>
+                <select className='city-select_main'>
                     <option>Москва</option>
                     <option>Санкт-Петербург</option>
                     <option>Новосибирск</option>
@@ -18,8 +19,8 @@ export const Search__form = () => {
                     <option>Омск</option>
                     <option>Самара</option>
                 </select>
-                <div className='switch-btn-city'></div>
-                <select className='city-select'>
+                <div className='switch-btn-city_main'></div>
+                <select className='city-select_main'>
                     <option>Москва</option>
                     <option>Санкт-Петербург</option>
                     <option>Новосибирск</option>
@@ -34,14 +35,16 @@ export const Search__form = () => {
             </div>
         </div>
         <div>
-            <label className='header__label'>Дата</label>
-            <div className='form-row'>
-                <input type='date' className='date-input'/>
+            <label className='header__label_main'>Дата</label>
+            <div className='form-row_main'>
+                <input type='date' className='date-input_main'/>
                 <div className='switch-btn-date'></div>
-                <input type='date' className='date-input'/>
+                <input type='date' className='date-input_main'/>
             </div>
         </div>
-        <button type='submit' className='search-btn'>Найти билеты</button>
+        <Link to="/choosetrain" className="routlink_main">
+            <button className='search-btn_main'>Найти билеты</button>
+        </Link>
     </form>
     </>
   )

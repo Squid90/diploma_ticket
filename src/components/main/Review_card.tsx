@@ -14,7 +14,7 @@ export const Review_card: React.FC<ReviewCardProp> = (item) => {
     <>
         <div className='review__block'>
             <div className='review__img'>
-                <img className='img__owner' src={img}></img>
+                <img className='img__owner' src={img} alt="Photo"></img>
             </div>
             <div className='review__textBlock'>
                 <h1 id='review__title'>{title}</h1>

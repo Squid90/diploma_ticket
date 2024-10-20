@@ -26,7 +26,6 @@
 
 
 .callUs__group {
-    text-decoration: none;
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 30px;
@@ -169,4 +168,8 @@
     line-height: 28.13px;
     text-align: left;
     color: rgba(229, 229, 229, 1);
+}
+
+.hidden {
+    display: none;
 }

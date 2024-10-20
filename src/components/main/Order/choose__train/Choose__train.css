@@ -1,0 +1,720 @@
+.choose__train {
+    width: 1920px;
+    padding: 95px 0 193px 258px;
+    display: flex;
+    box-sizing: border-box;
+    background-color: rgba(196, 196, 196, 0.2);;
+    
+}
+
+.choose__filter {
+    width: 364px;
+    background: rgba(62, 60, 65, 1);
+    margin-bottom: 94px;
+}
+
+.filter__date{
+    padding-left: 29px;
+    padding-top: 43px;
+}
+
+.label-selection {
+    width: 296px;
+    height: 46px;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 35.16px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+}
+
+.date-selection{
+    width: 295px;
+    height: 43px;
+    border-radius: 3px;
+    padding-left: 8px;
+    margin-bottom: 26px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.09px;
+    text-align: left;
+
+}
+
+.filter__line {
+    width: 360px;
+    height: 0px;
+    border: 1px solid rgba(229, 229, 229, 1)
+}
+
+.filter__type{
+    padding-left: 68px;
+    padding-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.option-selection{
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.option-pic {
+    width: 24px;
+    height: 24px;
+    margin-right: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.option-name {
+    width: 102px;
+    height: 21px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.09px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+    margin-right: 33px;
+}
+
+.option-checkbox {
+    width: 72px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch {
+    width: 72px;
+    height: 19px;
+    position: relative;
+    display: inline-block;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    transition: .4s;
+    border-radius: 10px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 28px;
+    width: 28px;
+    left: -4px;
+    bottom: -4px;
+    background: rgba(196, 196, 196, 1);
+    border-radius: 50%;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background: rgba(252, 220, 157, 1);
+}
+
+input:checked + .slider:before {
+    transform: translateX(50px);
+    background: rgba(255, 168, 0, 1);
+}
+
+.filter__price {
+    padding: 37px 0 63px 32px;
+}
+
+.label-price {
+    width: 331px;
+    height: 46px;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 35.16px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+}
+
+.price-from-to {
+    width: 294px;
+    height: 23px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.09px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+}
+
+.slider-container {
+    position: relative;
+    width: 294px;
+    height: 17px;
+    border-radius: 8px;
+    border: 1px solid rgba(196, 196, 196, 1)
+    
+}
+
+.slider-filter {
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+    position: absolute;
+    z-index: 2;
+}
+
+
+.slider-filter::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 24px;
+    width: 24px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 3;
+    transform: translate(-10%, -25%);
+}
+
+.slider-fill {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    height: 19px;
+    border-radius: 8px;
+    background: rgba(255, 168, 0, 1);
+    z-index: 1;
+}
+
+
+.slider-filter-value {
+    position: absolute;
+    height: 23px;
+    width: 45px;
+    padding-top: 5px;
+    transform: translate(-80%, 90%);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
+    text-align: right;
+    color: rgba(229, 229, 229, 1);
+}
+
+
+.direction-there, .direction-back {
+    padding: 24px 0 0 27px;
+}
+
+.collapse-block{
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.direction-title {
+    display: flex;
+    align-items: center;
+    padding-bottom: 22px;
+}
+
+.direction-pic {
+    width: 32px;
+    height: 26px;
+    background: rgba(255, 168, 0, 1);
+    border-radius: 5px;
+}
+
+.direction-text {
+    width: 231px;
+    height: 35px;
+    margin-left: 12px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 35.16px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+}
+
+.direction-collapse {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    border: 2px solid rgba(196, 196, 196, 1);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 35.16px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.departureTime, .arrivalTime {
+    height: 90px;
+    margin-bottom: 46px;
+}
+
+.time-title{
+    width: 300px;
+    height: 25px;
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28.13px;
+    text-align: left;
+    color: rgba(229, 229, 229, 1);
+}
+
+.right {
+    text-align: right;
+}
+
+.time-container {
+    height: 10px;
+}
+
+.time-slider-fill {
+    height: 12px;
+}
+
+.slider-time:-webkit-slider-thumb {
+    height: 18px;
+    width: 18px;
+}
+
+.choose__lastTicket {
+    width: 379px;
+}
+
+.lastTicket__title {
+    width: 378px;
+    height: 39px;
+    margin-bottom: 26px;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 35.16px;
+    text-align: left;
+    color: rgba(0, 0, 0, 1);
+}
+
+.lastTicket__tickets {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lastTicket__item {
+    width: 360px;
+    margin-bottom: 17px;
+    padding: 18px;
+    border: 1px solid rgba(196, 196, 196, 1);
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+}
+
+.lastTicket__cities, .lastTicket__stations, .lastTicket__info {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.lastTicket__cities {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23.44px;
+    text-align: left;
+    color: rgba(41, 41, 41, 1);
+
+}
+
+.lastTicket__arrivalCity {
+    text-align: right; 
+}
+
+.lastTicket__stations {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
+    color: rgba(146, 143, 148, 1);
+}
+.lastTicket__dapartureStation{
+    width: 115px;
+    height: 43px;
+    text-align: left;
+}
+.lastTicket__arrivalStation {
+    width: 115px;
+    height: 43px;
+    text-align: right;
+}
+
+.lastTicket__info {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 29px;
+}
+
+.lastTicket__options {
+    width: 92px;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lastTicket__priceInfo {
+    display: flex;
+    align-items: flex-end;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
+    text-align: right;
+    color: rgba(146, 143, 148, 1);
+
+
+}
+
+.lastTicket__price {
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 42.19px;
+    text-align: left;
+    color: rgba(255, 168, 0, 1);
+
+}
+
+.lastTicket__currency {
+    width: 20px;
+    height: 25px;
+}
+
+.choose__train__mainSide {
+    width: 959px;
+    padding-left: 67px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.mainside-sorting{
+    width: 100%;
+    height: 22px;
+    margin-bottom: 47px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.09px;
+    text-align: left;
+    color: rgba(146, 143, 148, 1);
+}
+
+.mainside-findCalc{
+    width: 105px;
+    height: 22px;
+}
+
+.mainside-SortCalc{
+    display: flex;
+}
+
+.mainside-howToSort {
+    height: 22px;
+}
+
+.chooseSorting {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 7px;
+}
+
+.mainside-calcShow {
+    width: 210px;
+    height: 22px;
+    display: flex;
+    margin-left: 43px;
+}
+
+.calcShow-howMuch {
+margin-left: 9px;
+cursor: pointer;
+}
+
+.howMuch-active {
+    color: black;
+    font-weight: 700;
+}
+
+.mainside-pagesBlock {
+    width: 564px;
+    margin-top: 91px;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pagesBlock-pageBtn {
+    width: 84px;
+    height: 75px;
+    border: 2px solid #C4C4C4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 35.16px;
+    text-align: left;
+    color: #928F94;
+    cursor: pointer;
+    fill: #928F94;
+}
+
+.activePageBtn {
+    border: 2px solid #FFA800;
+    background-color: #FFA800;
+    color: #FFFFFF;
+}
+
+.pagesBlock-pageBtn:hover {
+    border: 2px solid #FFA800;
+    color: #FFA800;
+    fill: #FFA800;
+}
+
+.trainsList-trainCard {
+    width: 959px;
+    height: 354px;
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(196, 196, 196, 1);
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.3);
+    display: flex;
+    margin-bottom: 51px;
+}
+
+.trainCard-trainNumber {
+    width: 197px;
+    height: 354px;
+    background: rgba(228, 224, 233, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.trainNumber-pic {
+    width: 86px;
+    height: 86px;
+    border: 2px solid rgba(255, 255, 255, 1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trainNumber-pic > svg {
+    width: 44px;
+    height: 52px;
+    fill: #FFFFFF;
+}
+
+.trainNumber-number {
+    width: 93px;
+    height: 27px;
+    margin: 15px 0 15px 0;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.13px;
+    text-align: center;
+    color: rgba(62, 60, 65, 1);
+}
+
+.trainNumber-track {
+    width: 153px;
+    height: 58px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
+    text-align: left;
+}
+
+.trainNumber-track > p {
+    margin: 0;
+}
+
+.trainCard-trainInfo {
+    width: 479px;
+    height: 354px;
+    background: rgba(255, 255, 255, 1);
+    border-right: 1px solid rgba(229, 229, 229, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.trainInfo-there-departure, .trainInfo-there-arrival {
+    width: 155px;
+    height: 72px;
+}
+
+.trainInfo-there, .trainInfo-back {
+    display: flex;
+    justify-content: space-around;
+}
+
+.trainInfo-Time {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.13px;
+    text-align: left;
+}
+
+.trainInfo-City {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.09px;
+    text-align: left;
+}
+
+.trainInfo-Station {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
+    text-align: left;
+    color: rgba(196, 196, 196, 1);
+}
+
+.trainInfo-timeTrack {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.09px;
+    text-align: left;
+    color: rgba(196, 196, 196, 1);
+}
+
+.trainInfo-direction {
+    width: 30px;
+    height: 20px;
+}
+
+.trainCard-trainPrice {
+    width: 235px;
+    background: rgba(255, 255, 255, 1);
+    padding: 49px 21px 23px 27px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.trainPrice-typeWagon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 23px;
+}
+
+.typeWagon-type {
+    width: 74px;
+    height: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
+    text-align: left;
+    color: rgba(62, 60, 65, 1);
+}
+
+.typeWagon-amount {
+    width: 22px;
+    height: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18.75px;
+    text-align: left;
+    color: rgba(255, 168, 0, 1);
+}
+
+.typeWagon-text {
+    width: 21.51px;
+    height: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
+    text-align: left;
+    color: rgba(146, 143, 148, 1);
+}
+
+.typeWagon-price {
+    width: 70px;
+    height: 28px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.13px;
+    text-align: left;
+    color: rgba(45, 43, 47, 1);
+}
+
+.typeWagon-currency {
+    width: 16px;
+    height: 19px;
+}
+
+.trainPrice-options {
+    height: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.trainPrice-options > svg {
+    margin-left: 10px;
+}
+
+.trainPrice-btn {
+    width: 228px;
+    height: 39px;
+    margin-top: 18px;
+    border-radius: 5px;
+    border: 0;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.13px;
+    text-align: center;
+    color: #FFFFFF;
+    background: #FFA800;
+}
+
+.trainPrice-btn:hover {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.trainPrice-btn:active {
+    background: rgba(0, 0, 0, 0);
+    color: rgba(255, 168, 0, 1);
+    border: 1px solid rgba(255, 168, 0, 1)
+}
+
+.hidden {
+    display: none;
+}

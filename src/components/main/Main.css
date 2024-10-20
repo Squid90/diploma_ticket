@@ -1,7 +1,7 @@
 .main {
     width: 1920px;
-    
 }
+
 
 .main__about {
     display: flex;
@@ -85,7 +85,7 @@ p {
     content: "";
     z-index: -1;
     opacity: 30%;
-    background-image: url("https://s3-alpha-sig.figma.com/img/ce7b/1b18/359fa1466fc2860526cab5ac824d0ba5?Expires=1728864000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=nC32UCp2Z70vMm6adlkn7zm2mJUwPblnsTivWsjbR7S3EOD3HHhxpmOc~mfkcD-CCt9Y-QBLnRw6PCoxhc3PkJEMt2bClyvYHpGf~F0zkMJ3BpaZDCMTUFMVB36YnealCVt2SouxNG5q6aqASAs4ZhybFP~LnKAJOabSr7yqNp5yqlYA8M9z37jfN8S8eee1osiWjX0hi2C~4X-6A7fvcttZkUB8YcPdpWbG07fr1iZQpn6xgmqbUR5xvV92-hPncoGOPhI6cm~gwf8zVrnPFci0eL7B4ikEYY6LflSCCJY5-zzqMhrM47MBKSAdjEVvoShJL-AWmbXwuHorm9pe8Q__");
+    background-image: url(../pic/HowItWorks_pic.png);
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -262,4 +262,8 @@ p {
 
 .dot_active{
     background: rgba(196, 196, 196, 1);
+}
+
+.hidden {
+    display: none;
 }

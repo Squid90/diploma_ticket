@@ -9,20 +9,18 @@ export const Header = () => {
   return (
     
     <>
-      <div className='header'>
-        <div className='header_background'>
-          <div id='headerLogo'>
+      <div className='header_main'>
+        <div className='header_background_main'>
+          <div id='headerLogo_main'>
             < Logo />
-            <div className='header__toolbar'>
+            <div className='header__toolbar_main'>
               <Toolbar items = {dataMenu} />
             </div>
           </div>
-          <div className='header__forms'>
-            <div className='header__slogan'> < Slogan /> </div>
-            <div className='header__search'> < Search__form /> </div>
+          <div className='header__forms_main'>
+            <div className='header__slogan_main'> < Slogan /> </div>
+            <div className='header__search_main'> < Search__form /> </div>
           </div>
-          
-          
         </div>
       </div>
     </>

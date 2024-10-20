@@ -13,7 +13,7 @@ export const Sub__item: React.FC<SubItemProp> = (item) => {
     
     <>
         <a className='subscription__pic' href={link}>
-            <svg viewBox={viewBox} fill="none" ><path d={img} stroke="#E5E5E5"></path></svg>
+            <svg viewBox={viewBox} fill="#E5E5E5" stroke="#E5E5E5"><path d={img} ></path></svg>
         </a>
     </>
 
