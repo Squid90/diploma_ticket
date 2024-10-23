@@ -318,6 +318,18 @@
 .passangers__leftBlock__detailsTrip{
     padding-left: 29px;
     padding-top: 43px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftBlock__detailsTrip{
+    width: 273px;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 35.16px;
+    text-align: left;
+    color: rgba(229, 229, 229, 1);
 }
 
 .passangers__leftBlock__line {
