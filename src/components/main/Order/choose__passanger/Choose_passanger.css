@@ -313,3 +313,30 @@
     text-align: left;
     cursor: pointer;
 }
+
+
+.passangers__leftBlock__detailsTrip{
+    padding-left: 29px;
+    padding-top: 43px;
+}
+
+.passangers__leftBlock__line {
+    width: 360px;
+    height: 0px;
+    border: 1px solid rgba(229, 229, 229, 1)
+}
+
+.passangers__leftBlock__direction-there, .passangers__leftBlock__direction-back{
+    padding-left: 68px;
+    padding-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.passangers__leftBlock__passangers {
+    padding: 37px 0 63px 32px;
+}
+
+.passangers__leftBlock__totalCost {
+    padding: 24px 0 0 27px;
+}
