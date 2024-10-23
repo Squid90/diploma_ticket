@@ -29,7 +29,7 @@ export interface TrainType {
 export const data_trainCard: TrainCardItemProp[] = [
     {
         id: '1',
-        trainNumber: '116',
+        trainNumber: '116C',
         trainTrackFrom: 'Москва',
         trainTrackTo: 'Санкт-Петербург',
         departureTimeThere: '2024-10-16:00:30:00+03:00',
@@ -48,30 +48,30 @@ export const data_trainCard: TrainCardItemProp[] = [
         arrivalStationBack: 'Курский вокзал',
         dataTrainType: [
             { 
-                trainType: "Сидячий",
-                trainAmount: '88',
+                trainType: 'Сидячий',
+                trainAmount: '40',
                 trainPrice: '1 920',
             },
             {
                 trainType: 'Плацкарт',
-                trainAmount: '52',
+                trainAmount: '20',
                 trainPrice: '2 530',
             },
             {
                 trainType: 'Купе',
-                trainAmount: '24',
+                trainAmount: '10',
                 trainPrice: '3 820',
             },
             {
                 trainType: 'Люкс',
-                trainAmount: '15',
+                trainAmount: '6',
                 trainPrice: '4 950',
             },
         ],
     },
     {
         id: '2',
-        trainNumber: '117',
+        trainNumber: '117C',
         trainTrackFrom: 'Казань',
         trainTrackTo: 'Адлер',
         departureTimeThere: '2024-10-16T01:00:00+03:00',
@@ -90,20 +90,20 @@ export const data_trainCard: TrainCardItemProp[] = [
         arrivalStationBack: 'Казанский вокзал',
         dataTrainType: [
             { 
-                trainType: "Сидячий",
-                trainAmount: '65',
-                trainPrice: '1 580',
+                trainType: 'Сидячий',
+                trainAmount: '40',
+                trainPrice: '1 920',
             },
             {
                 trainType: 'Плацкарт',
-                trainAmount: '32',
-                trainPrice: '3 530',
+                trainAmount: '25',
+                trainPrice: '2 530',
             },
         ],
     },
     {
         id: '3',
-        trainNumber: '118',
+        trainNumber: '118C',
         trainTrackFrom: 'Москва',
         trainTrackTo: 'Санкт-Петербург',
         departureTimeThere: '2024-10-16T01:30:00+03:00',
@@ -122,15 +122,20 @@ export const data_trainCard: TrainCardItemProp[] = [
         arrivalStationBack: 'Курский вокзал',
         dataTrainType: [
             {
-                trainType: 'Люкс',
+                trainType: 'Купе',
                 trainAmount: '15',
+                trainPrice: '3 820',
+            },
+            {
+                trainType: 'Люкс',
+                trainAmount: '6',
                 trainPrice: '4 950',
             },
         ],
     },
     {
         id: '4',
-        trainNumber: '119',
+        trainNumber: '119C',
         trainTrackFrom: 'Москва',
         trainTrackTo: 'Санкт-Петербург',
         departureTimeThere: '2024-10-16T02:00:00+03:00',
@@ -148,21 +153,21 @@ export const data_trainCard: TrainCardItemProp[] = [
         arrivalCityBack: 'Москва',
         arrivalStationBack: 'Курский вокзал',
         dataTrainType: [
-            {
-                trainType: 'Купе',
-                trainAmount: '24',
-                trainPrice: '3 820',
+            { 
+                trainType: 'Сидячий',
+                trainAmount: '40',
+                trainPrice: '1 920',
             },
             {
                 trainType: 'Люкс',
-                trainAmount: '15',
+                trainAmount: '5',
                 trainPrice: '4 950',
             },
         ],
     },
     {
         id: '5',
-        trainNumber: '120',
+        trainNumber: '120C',
         trainTrackFrom: 'Москва',
         trainTrackTo: 'Санкт-Петербург',
         departureTimeThere: '2024-10-16T02:30:00+03:00',
@@ -181,30 +186,30 @@ export const data_trainCard: TrainCardItemProp[] = [
         arrivalStationBack: 'Курский вокзал',
         dataTrainType: [
             { 
-                trainType: "Сидячий",
-                trainAmount: '88',
+                trainType: 'Сидячий',
+                trainAmount: '10',
                 trainPrice: '1 920',
             },
             {
                 trainType: 'Плацкарт',
-                trainAmount: '52',
+                trainAmount: '20',
                 trainPrice: '2 530',
             },
             {
                 trainType: 'Купе',
-                trainAmount: '24',
+                trainAmount: '30',
                 trainPrice: '3 820',
             },
             {
                 trainType: 'Люкс',
-                trainAmount: '15',
+                trainAmount: '40',
                 trainPrice: '4 950',
             },
         ],
     },
     {
         id: '6',
-        trainNumber: '121',
+        trainNumber: '121C',
         trainTrackFrom: 'Москва',
         trainTrackTo: 'Санкт-Петербург',
         departureTimeThere: '2024-10-16T03:00:00+03:00',
@@ -223,7 +228,7 @@ export const data_trainCard: TrainCardItemProp[] = [
         arrivalStationBack: 'Курский вокзал',
         dataTrainType: [
             { 
-                trainType: "Сидячий",
+                trainType: 'Сидячий',
                 trainAmount: '88',
                 trainPrice: '1 920',
             },
@@ -236,7 +241,7 @@ export const data_trainCard: TrainCardItemProp[] = [
     },
     {
         id: '7',
-        trainNumber: '122',
+        trainNumber: '122C',
         trainTrackFrom: 'Москва',
         trainTrackTo: 'Санкт-Петербург',
         departureTimeThere: '2024-10-16T03:30:00+03:00',
@@ -255,7 +260,7 @@ export const data_trainCard: TrainCardItemProp[] = [
         arrivalStationBack: 'Курский вокзал',
         dataTrainType: [
             { 
-                trainType: "Сидячий",
+                trainType: 'Сидячий',
                 trainAmount: '88',
                 trainPrice: '1 920',
             },
@@ -278,7 +283,7 @@ export const data_trainCard: TrainCardItemProp[] = [
     },
     {
         id: '8',
-        trainNumber: '123',
+        trainNumber: '123C',
         trainTrackFrom: 'Москва',
         trainTrackTo: 'Санкт-Петербург',
         departureTimeThere: '2024-10-16T04:00:00+03:00',
@@ -305,7 +310,7 @@ export const data_trainCard: TrainCardItemProp[] = [
     },
     {
         id: '9',
-        trainNumber: '124',
+        trainNumber: '124C',
         trainTrackFrom: 'Москва',
         trainTrackTo: 'Санкт-Петербург',
         departureTimeThere: '2024-10-16T04:30:00+03:00',
@@ -324,7 +329,7 @@ export const data_trainCard: TrainCardItemProp[] = [
         arrivalStationBack: 'Курский вокзал',
         dataTrainType: [
             { 
-                trainType: "Сидячий",
+                trainType: 'Сидячий',
                 trainAmount: '88',
                 trainPrice: '1 920',
             },
@@ -332,7 +337,7 @@ export const data_trainCard: TrainCardItemProp[] = [
     },
     {
         id: '10',
-        trainNumber: '125',
+        trainNumber: '125C',
         trainTrackFrom: 'Москва',
         trainTrackTo: 'Санкт-Петербург',
         departureTimeThere: '2024-10-16T05:00:00+03:00',
@@ -351,7 +356,7 @@ export const data_trainCard: TrainCardItemProp[] = [
         arrivalStationBack: 'Курский вокзал',
         dataTrainType: [
             { 
-                trainType: "Сидячий",
+                trainType: 'Сидячий',
                 trainAmount: '88',
                 trainPrice: '1 920',
             },
@@ -364,7 +369,7 @@ export const data_trainCard: TrainCardItemProp[] = [
     },
     {
         id: '11',
-        trainNumber: '126',
+        trainNumber: '126C',
         trainTrackFrom: 'Москва',
         trainTrackTo: 'Санкт-Петербург',
         departureTimeThere: '2024-10-16T05:30:00+03:00',
@@ -383,7 +388,7 @@ export const data_trainCard: TrainCardItemProp[] = [
         arrivalStationBack: 'Курский вокзал',
         dataTrainType: [
             { 
-                trainType: "Сидячий",
+                trainType: 'Сидячий',
                 trainAmount: '88',
                 trainPrice: '1 920',
             },
@@ -406,7 +411,7 @@ export const data_trainCard: TrainCardItemProp[] = [
     },
     {
         id: '12',
-        trainNumber: '127',
+        trainNumber: '127C',
         trainTrackFrom: 'Москва',
         trainTrackTo: 'Санкт-Петербург',
         departureTimeThere: '2024-10-16T06:00:00+03:00',
@@ -425,7 +430,7 @@ export const data_trainCard: TrainCardItemProp[] = [
         arrivalStationBack: 'Курский вокзал',
         dataTrainType: [
             { 
-                trainType: "Сидячий",
+                trainType: 'Сидячий',
                 trainAmount: '88',
                 trainPrice: '1 920',
             },
@@ -443,7 +448,7 @@ export const data_trainCard: TrainCardItemProp[] = [
     },
     {
         id: '13',
-        trainNumber: '128',
+        trainNumber: '128C',
         trainTrackFrom: 'Москва',
         trainTrackTo: 'Санкт-Петербург',
         departureTimeThere: '2024-10-16T06:30:00+03:00',
@@ -462,7 +467,7 @@ export const data_trainCard: TrainCardItemProp[] = [
         arrivalStationBack: 'Курский вокзал',
         dataTrainType: [
             { 
-                trainType: "Сидячий",
+                trainType: 'Сидячий',
                 trainAmount: '88',
                 trainPrice: '1 920',
             },
@@ -485,7 +490,7 @@ export const data_trainCard: TrainCardItemProp[] = [
     },
     {
         id: '14',
-        trainNumber: '129',
+        trainNumber: '129C',
         trainTrackFrom: 'Москва',
         trainTrackTo: 'Санкт-Петербург',
         departureTimeThere: '2024-10-16T07:00:00+03:00',
@@ -504,7 +509,7 @@ export const data_trainCard: TrainCardItemProp[] = [
         arrivalStationBack: 'Курский вокзал',
         dataTrainType: [
             { 
-                trainType: "Сидячий",
+                trainType: 'Сидячий',
                 trainAmount: '88',
                 trainPrice: '1 920',
             },
@@ -517,7 +522,7 @@ export const data_trainCard: TrainCardItemProp[] = [
     },
     {
         id: '15',
-        trainNumber: '130',
+        trainNumber: '130C',
         trainTrackFrom: 'Москва',
         trainTrackTo: 'Санкт-Петербург',
         departureTimeThere: '2024-10-16T07:30:00+03:00',

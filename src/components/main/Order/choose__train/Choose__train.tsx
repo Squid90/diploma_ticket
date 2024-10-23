@@ -19,7 +19,7 @@ export const Choose__train: React.FC = () => {
           <Choose__lastTicket />
         </div>
       </div>
-      <div className='choose__train__mainSide'>
+      <div className='choose__train__mainSide' id='chooseTrainMainSide'>
       <Routes>
         <Route path="/" element={<Choose__train__mainSide />} />
         <Route path="/chooseplace" element={<Choose__place__mainSide />} />

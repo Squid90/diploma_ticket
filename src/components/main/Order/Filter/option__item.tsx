@@ -21,7 +21,7 @@ export const Option__item: React.FC<TrainOptionItemProp> = (item) => {
             <div className='option-name'>{title}</div>
             <div className='option-checkbox'>
                 <label  className='switch'>
-                    <input id={id} type='checkbox' checked/>
+                    <input id={id} type='checkbox'/>
                     <span className='slider'></span>
                 </label>
             </div>
