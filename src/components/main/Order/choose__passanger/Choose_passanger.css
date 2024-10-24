@@ -59,6 +59,7 @@
 
 .passangers_passangerBlock_collapseBlock{
     overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
 }
 
 .passangers_passangerBlock_mainInfo {
@@ -316,15 +317,15 @@
 
 
 .passangers__leftBlock__detailsTrip{
-    padding-left: 29px;
-    padding-top: 43px;
+    width: 100%;
+    height: 108px;
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .leftBlock__detailsTrip{
-    width: 273px;
     font-size: 30px;
     font-weight: 500;
     line-height: 35.16px;
@@ -338,17 +339,198 @@
     border: 1px solid rgba(229, 229, 229, 1)
 }
 
-.passangers__leftBlock__direction-there, .passangers__leftBlock__direction-back{
-    padding-left: 68px;
-    padding-top: 32px;
+.passangers__leftBlock__direction-there, .passangers__leftBlock__direction-back, .passangers__leftBlock__passangers{
+    padding: 28px 22px 0 22px;
     display: flex;
     flex-wrap: wrap;
 }
 
-.passangers__leftBlock__passangers {
-    padding: 37px 0 63px 32px;
+.passangers__leftBlock__direction-title {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
+.passangers__leftBlock__direction-pic {
+    width: 32px;
+    height: 26px;
+    background: rgba(255, 168, 0, 1);
+    border-radius: 5px;
+}
+
+.passangers__leftBlock__pic-text-date{ 
+    display: flex;
+}
+
+.passangers__leftBlock__direction-text {
+    height: 35px;
+    margin-left: 12px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 35.16px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+}
+
+.collapse-block_trainTrackPic {
+    width: 30px;
+    height: 20px;
+}
+
+.passangers__leftBlock__direction-date {
+    height: 35px;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.09px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+    display: flex;
+    align-items: center;
+}
+
+.passangers__leftBlock__direction-collapse {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    border: 2px solid rgba(196, 196, 196, 1);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 35.16px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+}
+
+.passangers__leftBlock__collapse-block {
+    width: 100%;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    padding-top: 50px;
+}
+
+.collapse-block_block {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.collapse-block_leftText {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.09px;
+    text-align: left;
+    color: rgba(229, 229, 229, 1);
+}
+
+.collapse-block_rightText {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 18.75px;
+    text-align: right;
+    color: rgba(255, 255, 255, 1);
+}
+
+.collapse_Number {
+    font-size: 24px;
+    line-height: 28.13px;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.collapse_trainTrackTime {
+    padding-top: 10px;
+    justify-content: center;
+}
+
+.collapse-block_time {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.13px;
+    color: #FFF;
+}
+
+.collapse_trainTrackDeparture, .collapse_trainTrackArrival {
+    color: rgba(146, 143, 148, 1);
+
+}
+
+.collapse_trainCities {
+    width: 155px;
+}
+
+.collapse_trainCities > p {
+    font-weight: 400;
+    line-height: 18.75px;
+    color: rgba(146, 143, 148, 1);
+}
+
+
+.collapse-block__passangers {
+    width: 100%;
+    margin-bottom: 46px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.passangers__leftBlock__pic {
+    width: 26px;
+    height: 26px;
+}
+
+.collapse-block__passanger {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.09px;
+    text-align: left;
+    color: rgba(229, 229, 229, 1);
+}
+
+.collapse-block__ticketCost {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.13px;
+    text-align: right;
+    color: #FFF;
+}
+
+.collapse-block__ticketCost > span {
+    color: rgba(146, 143, 148, 1);
+}
+
+
 .passangers__leftBlock__totalCost {
-    padding: 24px 0 0 27px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 22px 33px 22px;
+}
+
+.leftBlock__totalCost_title {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 35.16px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+}
+
+.leftBlock__totalCost_price {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56.25px;
+    text-align: left;
+    color: rgba(255, 168, 0, 1);
+}
+
+.leftBlock__totalCost_price > span {
+    color: rgba(229, 229, 229, 1);
 }
