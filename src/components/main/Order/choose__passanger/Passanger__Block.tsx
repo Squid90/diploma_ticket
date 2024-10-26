@@ -11,7 +11,7 @@ export interface BlockProp {
 
 export const Passanger__Block: React.FC<BlockProp> = ({ index }) => {
 
-  const [isCollapsedPassanger, setIsCollapsedPassanger] = useState<boolean>(false);
+  const [isCollapsedPassanger, setIsCollapsedPassanger] = useState<boolean>(true);
   const toggleCollapseThere = () => {
     setIsCollapsedPassanger(!isCollapsedPassanger);
   };
@@ -34,6 +34,10 @@ export const Passanger__Block: React.FC<BlockProp> = ({ index }) => {
 
   const deletePassanger = () => {
     document.getElementById(`Пассажир_${index}`)?.remove();
+  }
+
+  const deleteError = () => {
+    // document.querySelector('.passangers_passangerBlock_error')?.remove();
   }
 
   const [passengerType, setPassengerType] = useState('adult');
@@ -86,15 +90,26 @@ export const Passanger__Block: React.FC<BlockProp> = ({ index }) => {
         }
       )
       ,
-    documentSeries: Yup.number()
+    documentSeries: Yup.string()
       .required('Серия документа - Обязательное поле')
-      .min(4, 'Серия паспорта должна содержать 4 цифры')
-      .max(4, 'Серия паспорта должна содержать 4 цифры')
-      ,
-    documentNumber: Yup.number()
+      .test(
+        "dates-test",
+        "Серия паспорта должна содержать только цифры от 0 до 9",
+        (value) => {
+          return /[0-9][0-9][0-9][0-9]/.test(value)
+        }
+      )
+      .max(4, 'Серия паспорта должна содержать 4 цифры'),
+    documentNumber: Yup.string()
       .required('Номер документа - Обязательное поле')
-      .min(6, 'Номер паспорта должна содержать 6 цифр')
-      .max(6, 'Номер паспорта должна содержать 6 цифр'),
+      .test(
+        "dates-test",
+        "Номер паспорта должн содержать только цифры от 0 до 9",
+        (value) => {
+          return /[0-9][0-9][0-9][0-9][0-9][0-9]/.test(value)
+        }
+      )
+      .max(6, 'Номер паспорта должн содержать 6 цифр')
   });
 
 
@@ -126,6 +141,8 @@ export const Passanger__Block: React.FC<BlockProp> = ({ index }) => {
           validationSchema={SignupSchema}
           onSubmit={ (values) => {
             console.log(values);
+            const parrent = document.getElementById(`Пассажир_${index}`)
+            parrent?.querySelector('.passangers_passangerBlock_nextPassanger')?.classList.add('nextPassangerAccess');
           }}
           > 
           {({ errors, touched }) => (
@@ -227,26 +244,42 @@ export const Passanger__Block: React.FC<BlockProp> = ({ index }) => {
             <div className='passangers_passangerBlock_line'></div>
 
 
-            {(errors.surname && touched.surname) ? (
-                <div className='passangers_passangerBlock_errorMassege'>{errors.surname}</div>
-              ) : (errors.name && touched.name) ? (
-                <div className='passangers_passangerBlock_errorMassege'>{errors.name}</div>
-              ) : (errors.birthday && touched.birthday) ? (
-                <div className='passangers_passangerBlock_errorMassege'>{errors.birthday}</div>
-              ) : (errors.documentSeries && touched.documentSeries) ? (
-                <div className='passangers_passangerBlock_errorMassege'>{errors.documentSeries}</div>
-              ) : (errors.documentNumber && touched.documentNumber) ? (
-                <div className='passangers_passangerBlock_errorMassege'>{errors.documentNumber}</div>
-              ) : (
+            
                 <div className='passangers_passangerBlock_nextPassanger'>
+
+                  {(errors.surname && touched.surname) ? (
+                    <div className='passangers_passangerBlock_error'>
+                      <div className='passangers_passangerBlock_closeError' onClick={deleteError}>X</div>
+                      <div className='passangers_passangerBlock_errorMassege'>{errors.surname}</div>
+                    </div>
+                  ) : (errors.name && touched.name) ? (
+                    <div className='passangers_passangerBlock_error'>
+                      <div className='passangers_passangerBlock_closeError' onClick={deleteError}>X</div>
+                      <div className='passangers_passangerBlock_errorMassege'>{errors.name}</div>
+                    </div>
+                  ) : (errors.birthday && touched.birthday) ? (
+                    <div className='passangers_passangerBlock_error'>
+                      <div className='passangers_passangerBlock_closeError' onClick={deleteError}>X</div>
+                      <div className='passangers_passangerBlock_errorMassege'>{errors.birthday}</div>
+                    </div>
+                  ) : (errors.documentSeries && touched.documentSeries) ? (
+                    <div className='passangers_passangerBlock_error'>
+                      <div className='passangers_passangerBlock_closeError' onClick={deleteError}>X</div>
+                      <div className='passangers_passangerBlock_errorMassege'>{errors.documentSeries}</div>
+                    </div>
+                  ) : (errors.documentNumber && touched.documentNumber) ? (
+                    <div className='passangers_passangerBlock_error'>
+                      <div className='passangers_passangerBlock_closeError' onClick={deleteError}>X</div>
+                      <div className='passangers_passangerBlock_errorMassege'>{errors.documentNumber}</div>
+                    </div>
+                  ) : null}
+
                   <button
                     className='passangers_passangerBlock_nextPassanger_btn'
                      onClick={nextPassanger}
                     type="submit">Следующий пассажир
                   </button>
                 </div>
-              )}
-            
           </Form>
           )}
         </Formik>

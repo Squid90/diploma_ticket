@@ -268,12 +268,18 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 35px;
+    position: relative;
+    z-index: 1;
+}
+
+.nextPassangerAccess {
+    background: rgba(178, 246, 161, 1);
 }
 
 .passangers_passangerBlock_nextPassanger_btn {
     width: 303px;
     height: 52px;
+    margin-right: 35px;
     color: rgba(41, 41, 41, 1);
     border: 1px solid rgba(41, 41, 41, 1);
     border-radius: 5px;
@@ -284,10 +290,6 @@
     cursor: pointer;
 }
 
-.passangers_passangerBlock_nextPassanger_btn:disabled {
-    background-color: black;
-    cursor: auto;
-}
 
 .passangers_passangerBlock_addNewPassangerBlock {
     width: 960px;
@@ -542,16 +544,61 @@ p {
 }
 
 .passangers_passangerBlock_errorMassege {
-    width: 100%;
-    height: 117px;
+    width: 480px;
+    height: 46px;
     font-size: 18px;
     font-weight: 400;
     line-height: 21.09px;
     text-align: left;
+    display: flex;
+    align-items: center;
+    
+}
+
+.passangers_passangerBlock_error {
+    width: 960px;
+    height: 117px;
     background: rgba(255, 61, 0, 0.38);
     box-sizing: border-box;
     display: flex;
     align-items: center;
     padding-left: 72px;
+    position: absolute;
+    z-index: 2;
+}
 
+.passangers_passangerBlock_closeError {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.81);
+    color: rgba(255, 61, 0, 0.38);
+    border-radius: 50%;
+    margin-right: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.passangers_passangerBlock__nextPage {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 100px;
+}
+
+.passangers_passangerBlock__nextPageBtn {
+    width: 222px;
+    height: 60px;
+    border-radius: 5px;
+    border: 0;
+    background: rgba(255, 168, 0, 1);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.13px;
+    text-align: center;
+    color: #FFF;
+    cursor: pointer;
 }

@@ -4,15 +4,15 @@ import { useState } from 'react';
 export const Passanger__LeftBlock: React.FC = () => {
 
 
-    const [isCollapsedThere, setIsCollapsedThere] = useState<boolean>(false);
+    const [isCollapsedThere, setIsCollapsedThere] = useState<boolean>(true);
     const toggleCollapseThere = () => {
       setIsCollapsedThere(!isCollapsedThere);
     };
-    const [isCollapsedBack, setIsCollapsedBack] = useState<boolean>(false);
+    const [isCollapsedBack, setIsCollapsedBack] = useState<boolean>(true);
     const toggleCollapseBack = () => {
       setIsCollapsedBack(!isCollapsedBack);
     };
-    const [isCollapsedPassangers, setIsCollapsedPassangers] = useState<boolean>(false);
+    const [isCollapsedPassangers, setIsCollapsedPassangers] = useState<boolean>(true);
     const toggleCollapsePassangers = () => {
         setIsCollapsedPassangers(!isCollapsedPassangers);
     };

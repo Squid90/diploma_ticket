@@ -7,6 +7,7 @@ import { Choose__place__mainSide } from '../choose__place/choose__place__mainSid
 import { Routes, Route } from 'react-router-dom';
 import { Choose__passangers__mainSide } from '../choose__passanger/choose__passangers__mainSide';
 import { Passanger__LeftBlock } from '../choose__passanger/Passanger__LeftBlock';
+import { Choose__pay__mainSide } from '../choose_pay/Choose__pay__mainSide';
 
 export const Choose__train: React.FC = () => {
   
@@ -17,7 +18,7 @@ export const Choose__train: React.FC = () => {
         <Routes>
             <Route path="/" element={<Choose__filter />} />
             <Route path="/chooseplace" element={<Choose__filter />} />
-            <Route path="/chooseplace/choosepassangers" element={<Passanger__LeftBlock />} />
+            <Route path="/chooseplace/choosepassangers/*" element={<Passanger__LeftBlock />} />
         </Routes>
         </div>
         <div className='choose__lastTicket'>
@@ -33,6 +34,7 @@ export const Choose__train: React.FC = () => {
         <Route path="/" element={<Choose__train__mainSide />} />
         <Route path="/chooseplace" element={<Choose__place__mainSide />} />
         <Route path="/chooseplace/choosepassangers" element={<Choose__passangers__mainSide />} />
+        <Route path="/chooseplace/choosepassangers/choosepay" element={<Choose__pay__mainSide />} />
       </Routes>
       </div>
     </div>

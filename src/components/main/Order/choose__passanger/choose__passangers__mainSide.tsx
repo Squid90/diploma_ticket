@@ -1,5 +1,5 @@
 import './Choose_passanger.css'
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { data_trainCard } from "../choose__train/data__train/data__trainCard";
 import { data_ticket } from "../data_order/data_order";
 import { useState } from 'react';
@@ -14,7 +14,16 @@ export const Choose__passangers__mainSide: React.FC = () => {
   const currentTrain = data_trainCard[id-1];
   const selectedSeat = data_ticket[0];
 
-  
+  const navigate = useNavigate();
+  const handleSelectPay = () => {
+    navigate('/choosetrain/chooseplace/choosepassangers/choosepay', {});
+    
+    window.scrollTo({
+      top: 592,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }
 
   const [passangerBlocks, setpassangerBlocks] = useState([{ value: '' }]);
 
@@ -28,7 +37,7 @@ export const Choose__passangers__mainSide: React.FC = () => {
   return (
     <>
     {passangerBlocks.map((_block, index) => (
-        <Passanger__Block index={index} surname={''}/>
+        <Passanger__Block index={index}/>
       ))}
 
     <div className='passangers_passangerBlock_addNewPassangerBlock'>
@@ -36,6 +45,12 @@ export const Choose__passangers__mainSide: React.FC = () => {
       <div
         className='passangers_passangerBlock_addNewPassangerBtn'
         onClick={addNewPassanger}>+</div>
+    </div>
+
+    <div className='passangers_passangerBlock__nextPage'>
+      <button 
+        className='passangers_passangerBlock__nextPageBtn'
+        onClick={handleSelectPay}>Далее</button>
     </div>
     </>
   )
