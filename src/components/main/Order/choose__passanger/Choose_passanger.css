@@ -281,6 +281,12 @@
     font-weight: 700;
     line-height: 28.13px;
     text-align: center;
+    cursor: pointer;
+}
+
+.passangers_passangerBlock_nextPassanger_btn:disabled {
+    background-color: black;
+    cursor: auto;
 }
 
 .passangers_passangerBlock_addNewPassangerBlock {
@@ -533,4 +539,19 @@ p {
 
 .leftBlock__totalCost_price > span {
     color: rgba(229, 229, 229, 1);
+}
+
+.passangers_passangerBlock_errorMassege {
+    width: 100%;
+    height: 117px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.09px;
+    text-align: left;
+    background: rgba(255, 61, 0, 0.38);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding-left: 72px;
+
 }

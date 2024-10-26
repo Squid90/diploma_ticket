@@ -50,7 +50,7 @@ export const Choose__place__mainSide: React.FC = () => {
   };
   const handleSelectPassanger = (selectedSeatThere: any, selectedSeatBack: any) => {
     navigate('/choosetrain/chooseplace/choosepassangers', { state: selectedSeatThere});
-    document.querySelector('.bar2')?.classList.add('active__bar');
+    
     window.scrollTo({
       top: 592,
       left: 0,

@@ -7,6 +7,8 @@ import { Passanger__Block } from './Passanger__Block';
 
 export const Choose__passangers__mainSide: React.FC = () => {
 
+  document.querySelector('.bar2')?.classList.add('active__bar');
+
   const location = useLocation();
   const id = location.state;
   const currentTrain = data_trainCard[id-1];
@@ -26,7 +28,7 @@ export const Choose__passangers__mainSide: React.FC = () => {
   return (
     <>
     {passangerBlocks.map((_block, index) => (
-        <Passanger__Block index={index}/>
+        <Passanger__Block index={index} surname={''}/>
       ))}
 
     <div className='passangers_passangerBlock_addNewPassangerBlock'>
