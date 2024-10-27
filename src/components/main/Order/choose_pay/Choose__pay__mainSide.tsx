@@ -1,10 +1,18 @@
 import { Field, Form, Formik } from 'formik';
 import './Choose__pay.css'
 import React, { useState } from 'react'
+import * as Yup from 'yup';
 
 export const Choose__pay__mainSide: React.FC = () => {
     document.querySelector('.bar2')?.classList.add('active__bar');
     document.querySelector('.bar3')?.classList.add('active__bar');
+
+    const SignupSchema = Yup.object().shape({
+      // surname: Yup.string()
+      //   .min(2, 'Фамилия должна содержать минимум 2 буквы')
+      //   .max(50, 'Фамилия должна содержать максимум 50 букв')
+      //   .required('Фамилия - Обязательное поле'),
+    })
 
     const [isCheckedOnline, setIsCheckedOnline] = useState(false);
     const [isCheckedCash, setIsCheckedCash] = useState(false);
@@ -18,7 +26,12 @@ export const Choose__pay__mainSide: React.FC = () => {
   return (
     <div className='choose_pay_mainSide'>
       <div className='choose_pay_mainSide_formData'>
-        <Formik>
+        <Formik 
+          initialValues={{ surname: '', name: '', birthday: '', documentSeries: '', documentNumber: '' }}
+          validationSchema={SignupSchema}
+          onSubmit={ (values) => {
+            console.log(values);
+          }}>
           <Form>
             <div className='choose_pay_mainSide_title'>
               Персональные данные
