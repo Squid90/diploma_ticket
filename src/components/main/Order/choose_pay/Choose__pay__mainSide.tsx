@@ -2,9 +2,17 @@ import './Choose__pay.css'
 import React from 'react'
 import { Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { data_trainCard } from '../choose__train/data__train/data__trainCard';
+import { data_ticket } from '../data_order/data_order';
 
 export const Choose__pay__mainSide: React.FC = () => {
+
+  const location = useLocation();
+  const id = location.state;
+  const currentTrain = data_trainCard[id-1];
+  const selectedSeat = data_ticket[0];
+  console.log(selectedSeat);
   
   document.querySelector('.bar2')?.classList.add('active__bar');
   document.querySelector('.bar3')?.classList.add('active__bar');

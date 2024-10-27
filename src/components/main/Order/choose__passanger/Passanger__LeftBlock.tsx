@@ -1,8 +1,13 @@
 import { useState } from 'react';
+import { data_ticket } from '../data_order/data_order';
+import { data_trainCard } from '../choose__train/data__train/data__trainCard';
+import moment from 'moment';
 
 
 export const Passanger__LeftBlock: React.FC = () => {
-
+    const selectedInfo = data_ticket[0];
+    const currentTrain = data_trainCard[Number(selectedInfo.trainIdSelect) - 1]
+    //console.log (currentTrain);
 
     const [isCollapsedThere, setIsCollapsedThere] = useState<boolean>(true);
     const toggleCollapseThere = () => {
@@ -20,7 +25,7 @@ export const Passanger__LeftBlock: React.FC = () => {
   return (
     <>
         <div className='passangers__leftBlock__detailsTrip'>
-            <div className='leftBlock__detailsTrip'>ДЕТАЛИ ПОЕЗДКИ</div>
+            <div className='leftBlock__detailsTrip'>Детали поездки</div>
         </div>
         <div className='passangers__leftBlock__line'></div>
         <div className='passangers__leftBlock__direction-there'>
@@ -33,7 +38,7 @@ export const Passanger__LeftBlock: React.FC = () => {
                         Туда
                     </div>
                     <div className='passangers__leftBlock__direction-date'>
-                        03/08/2025
+                        {moment(currentTrain.departureTimeThere).format('DD/MM/YYYY')}
                     </div>
                 </div>
                 <div className='passangers__leftBlock__direction-collapse' onClick={toggleCollapseThere} >
@@ -46,7 +51,7 @@ export const Passanger__LeftBlock: React.FC = () => {
                         № Поезда
                     </div>
                     <div className='collapse-block_rightText collapse_Number'>
-                        116С
+                        {currentTrain.trainNumber}
                     </div>
                 </div>
                 <div className='collapse-block_block'>
@@ -54,29 +59,29 @@ export const Passanger__LeftBlock: React.FC = () => {
                         Название
                     </div>
                     <div className='collapse-block_rightText collapse_Name'>
-                        Москва <p>Санкт-Петербург</p>
+                        {currentTrain.trainTrackFrom} <p>{currentTrain.trainTrackTo}</p>
                     </div>
                 </div>
                 <div className='collapse-block_leftText collapse_trainTrackTime collapse-block_block'>
-                    09:32
+                    {currentTrain.timeTrackThere}
                 </div>
                 <div className='collapse-block_block'>
                     <div className='collapse-block_leftText collapse_trainTrackDeparture'>
-                        <p className='collapse-block_time'>09-22</p>11.11.2011
+                        <p className='collapse-block_time'>{moment(currentTrain.departureTimeThere).format('LT')}</p>{moment(currentTrain.departureTimeThere).format('DD/MM/YYYY')}
                     </div>
                     <div className='collapse-block_trainTrackPic'>
                         <svg viewBox='0 0 60 60' fill='#FFA800'><path d='m61 30.87-18.88-16.33a1.5 1.5 0 0 0 -2.48 1.13v7.83h-35.64a1.5 1.5 0 0 0 -1.5 1.5v14a1.5 1.5 0 0 0 1.5 1.5h35.64v7.83a1.51 1.51 0 0 0 2.48 1.13l18.88-16.33a1.49 1.49 0 0 0 0-2.26z'/></svg>
                     </div>
                     <div className='collapse-block_rightText collapse_trainTrackArrival'>
-                        <p className='collapse-block_time'>13-45</p>12.12.2012
+                        <p className='collapse-block_time'>{moment(currentTrain.arrivalTimeThere).format('LT')}</p>{moment(currentTrain.arrivalTimeThere).format('DD/MM/YYYY')}
                     </div>
                 </div>
                 <div className='collapse-block_block'>
                     <div className='collapse-block_leftText collapse_trainCities'>
-                        Москва <p>Курский вокзал</p>
+                        {currentTrain.departureCityThere} <p>{currentTrain.departureStationThere}</p>
                     </div>
                     <div className='collapse-block_rightText collapse_trainCities'>
-                        Санкт-Петербург <p>Ладожский вокзал</p>
+                        {currentTrain.arrivalCityThere} <p>{currentTrain.arrivalStationThere}</p>
                     </div>
                 </div>
             </div>
@@ -92,7 +97,7 @@ export const Passanger__LeftBlock: React.FC = () => {
                         Обратно
                     </div>
                     <div className='passangers__leftBlock__direction-date'>
-                        23/09/2026
+                        {moment(currentTrain.departureTimeBack).format('DD/MM/YYYY')}
                     </div>
                 </div>
                 <div className='passangers__leftBlock__direction-collapse' onClick={toggleCollapseBack}>
@@ -105,7 +110,7 @@ export const Passanger__LeftBlock: React.FC = () => {
                         № Поезда
                     </div>
                     <div className='collapse-block_rightText collapse_Number'>
-                        116С
+                        {currentTrain.trainNumber}
                     </div>
                 </div>
                 <div className='collapse-block_block'>
@@ -113,29 +118,29 @@ export const Passanger__LeftBlock: React.FC = () => {
                         Название
                     </div>
                     <div className='collapse-block_rightText collapse_Name'>
-                        Санкт-Петербург<p>Москва</p>
+                        {currentTrain.trainTrackTo}<p>{currentTrain.trainTrackFrom}</p>
                     </div>
                 </div>
                 <div className='collapse-block_leftText collapse_trainTrackTime collapse-block_block'>
-                    09:32
+                    {currentTrain.timeTrackBack}
                 </div>
                 <div className='collapse-block_block'>
                     <div className='collapse-block_leftText collapse_trainTrackDeparture'>
-                        <p className='collapse-block_time'>13-45</p>12.12.2012
+                        <p className='collapse-block_time'>{moment(currentTrain.departureTimeBack).format('LT')}</p>{moment(currentTrain.departureTimeBack).format('DD/MM/YYYY')}
                     </div>
                     <div className='collapse-block_trainTrackPic'>
                         <svg viewBox='0 0 60 60' fill='#FFA800'><path d='m60 23.5h-35.64v-7.83a1.5 1.5 0 0 0 -2.48-1.13l-18.88 16.33a1.49 1.49 0 0 0 0 2.26l18.88 16.33a1.51 1.51 0 0 0 2.48-1.13v-7.83h35.64a1.5 1.5 0 0 0 1.5-1.5v-14a1.5 1.5 0 0 0 -1.5-1.5z'/></svg>
                     </div>
                     <div className='collapse-block_rightText collapse_trainTrackArrival'>
-                        <p className='collapse-block_time'>09-22</p>11.11.2011
+                        <p className='collapse-block_time'>{moment(currentTrain.arrivalTimeBack).format('LT')}</p>{moment(currentTrain.arrivalTimeBack).format('DD/MM/YYYY')}
                     </div>
                 </div>
                 <div className='collapse-block_block'>
                     <div className='collapse-block_leftText collapse_trainCities'>
-                        Санкт-Петербург <p>Ладожский вокзал</p>
+                        {currentTrain.departureCityBack} <p>{currentTrain.departureStationBack}</p>
                     </div>
                     <div className='collapse-block_rightText collapse_trainCities'>
-                        Москва <p>Курский вокзал</p>
+                        {currentTrain.arrivalCityBack} <p>{currentTrain.arrivalStationBack}</p>
                     </div>
                 </div>
             </div>
@@ -156,7 +161,7 @@ export const Passanger__LeftBlock: React.FC = () => {
             <div className='passangers__leftBlock__collapse-block' style={{maxHeight: isCollapsedPassangers ? '350px' : '0px'}}>
                 <div className='collapse-block__passangers'>
                     <div className='collapse-block__passanger'>1 Взрослый</div>
-                    <div className='collapse-block__ticketCost'>5 840 <span>Р</span></div>
+                    <div className='collapse-block__ticketCost'>{selectedInfo.ticketPriceSelect} <span>Р</span></div>
                 </div>
             </div>
         </div>
@@ -166,7 +171,7 @@ export const Passanger__LeftBlock: React.FC = () => {
                 ИТОГ
             </div>
             <div className='leftBlock__totalCost_price'>
-                5 840 <span>Р</span>
+                {selectedInfo.ticketPriceSelect} <span>Р</span>
             </div>
         </div>
     </>

@@ -137,7 +137,7 @@ export const Passanger__Block: React.FC<BlockProp> = ({ index }) => {
 
       <div className='passangers_passangerBlock_collapseBlock'style={{maxHeight: isCollapsedPassanger ? '1500px' : '0px'}}>
         <Formik
-          initialValues={{ surname: '', name: '', birthday: '', documentSeries: '', documentNumber: '' }}
+          initialValues={{ surname: '', name: '', middlename: '', birthday: '', documentSeries: '', documentNumber: '' }}
           validationSchema={SignupSchema}
           onSubmit={ (values) => {
             console.log(values);

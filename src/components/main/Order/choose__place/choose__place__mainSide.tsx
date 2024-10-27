@@ -1,5 +1,3 @@
-// import { Link } from 'react-router-dom'
-// to='/choosetrain/chooseplace/choosepassangers'
 import './Choose_place.css'
 import { useLocation, useNavigate } from 'react-router-dom';
 import { data_trainCard } from '../choose__train/data__train/data__trainCard';
@@ -29,6 +27,7 @@ export const Choose__place__mainSide: React.FC = () => {
   const location = useLocation();
   const id = location.state;
   const currentTrain = data_trainCard[id-1];
+  const trainIdSelect = id-1;
 
   document.querySelector('.bar2')?.classList.remove('active__bar');
 
@@ -48,7 +47,60 @@ export const Choose__place__mainSide: React.FC = () => {
       behavior: 'smooth',
     });
   };
-  const handleSelectPassanger = (selectedSeatThere: any, selectedSeatBack: any) => {
+
+  const [selectedSeatThere, setSelectedSeatThere] = useState<number | null>(null);
+  const handleSeatThereClick = (seatNumber: number) => {
+    setSelectedSeatThere(selectedSeatThere === seatNumber ? null : seatNumber);
+  };
+  
+  const [selectedSeatBack, setSelectedSeatBack] = useState<number | null>(null);
+  const handleSeatBackClick = (seatNumber: number) => {
+    setSelectedSeatBack(selectedSeatBack === seatNumber ? null : seatNumber);
+  };
+
+
+  const typeWagonThereSelect = selectedSeatThere?.toString().charAt(0);
+  const typeWagonBackSelect = selectedSeatBack?.toString().charAt(0);
+  let ticketPriceSelectThere: string | undefined
+  switch(typeWagonThereSelect) {
+    case '1':  
+      ticketPriceSelectThere = idSeatType?.trainPrice
+      break
+    case '2':  
+      ticketPriceSelectThere = idPlazcartType?.trainPrice
+      break
+    case '3':  
+      ticketPriceSelectThere = idCoupeType?.trainPrice
+      break
+    case '4':
+      ticketPriceSelectThere = idLuxType?.trainPrice
+      break
+    default:
+      ticketPriceSelectThere = '0'
+      break
+  }
+  let ticketPriceSelectBack: string | undefined
+  switch(typeWagonBackSelect) {
+    case '1':  
+      ticketPriceSelectBack = idSeatType?.trainPrice
+      break
+    case '2':  
+      ticketPriceSelectBack = idPlazcartType?.trainPrice
+      break
+    case '3':  
+      ticketPriceSelectBack = idCoupeType?.trainPrice
+      break
+    case '4':
+      ticketPriceSelectBack = idLuxType?.trainPrice
+      break
+    default:
+      ticketPriceSelectBack = '0'
+      break
+  }
+
+  const ticketPriceSelect = Number(ticketPriceSelectThere) + Number(ticketPriceSelectBack);
+  
+  const handleSelectPassanger = (trainIdSelect: any, typeWagonThereSelect: any, selectedSeatThere: any, typeWagonBackSelect: any, selectedSeatBack: any, ticketPriceSelect: any) => {
     navigate('/choosetrain/chooseplace/choosepassangers', { state: selectedSeatThere});
     
     window.scrollTo({
@@ -59,25 +111,18 @@ export const Choose__place__mainSide: React.FC = () => {
 
     const updatedDataTicket = data_ticket.map(ticket => ({
       ...ticket,
+      trainIdSelect: trainIdSelect,
+      typeWagonThereSelect: typeWagonThereSelect,
       numberSeatThereSelect: selectedSeatThere,
-      numberSeatBackSelect: selectedSeatBack
+      typeWagonBackSelect: typeWagonBackSelect,
+      numberSeatBackSelect: selectedSeatBack,
+      ticketPriceSelect: ticketPriceSelect
     }));
   
     data_ticket.splice(0, 1, updatedDataTicket[0]);
 
   };
   
-  const [selectedSeatThere, setSelectedSeatThere] = useState<number | null>(null);
-  const handleSeatThereClick = (seatNumber: number) => {
-    setSelectedSeatThere(selectedSeatThere === seatNumber ? null : seatNumber);
-  };
-  
-
-  const [selectedSeatBack, setSelectedSeatBack] = useState<number | null>(null);
-  const handleSeatBackClick = (seatNumber: number) => {
-    setSelectedSeatBack(selectedSeatBack === seatNumber ? null : seatNumber);
-  };
-
   const handleChangeTypeWagonThere = () => {
     document.querySelectorAll('.places__typeWagon__pictureElm').forEach((element,index,item)=>{
       element.addEventListener('click',()=>{
@@ -1168,7 +1213,16 @@ export const Choose__place__mainSide: React.FC = () => {
         </div>
 
         <div className='choose__place__confirm'>
-          <button className='choose__place__btnConfirm' onClick={() => handleSelectPassanger(selectedSeatThere, selectedSeatBack)}>Далее</button>
+          <button
+            className='choose__place__btnConfirm'
+              onClick={() =>
+                handleSelectPassanger(
+                  trainIdSelect,
+                  typeWagonThereSelect,
+                  selectedSeatThere,
+                  typeWagonBackSelect,
+                  selectedSeatBack,
+                  ticketPriceSelect)}>Далее</button>
         </div>
 
       </div>
