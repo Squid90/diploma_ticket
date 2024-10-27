@@ -220,3 +220,7 @@
     align-items: center;
     
 }
+
+.checkboxText_active {
+    color: #FFA800;
+}

@@ -405,7 +405,7 @@ input:checked + .slider:before {
 }
 
 .choose__train__mainSide {
-    width: 959px;
+    width: 960px;
     padding-left: 67px;
     display: flex;
     flex-direction: column;

@@ -12,6 +12,11 @@ const sortOptions = [
 
 
 export const Mainside__trainsList: React.FC = () => {
+
+  document.querySelector('.bar2')?.classList.remove('active__bar');
+  document.querySelector('.bar3')?.classList.remove('active__bar');
+  document.querySelector('.bar4')?.classList.remove('active__bar');
+
   const [sortOption, setSortOption] = useState<'time' | 'duration' | 'price'>('time');
   const [itemsPerPage, setItemsPerPage] = useState<number>(5);
   const [currentPage, setCurrentPage] = useState<number>(1);

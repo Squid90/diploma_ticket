@@ -1,5 +1,189 @@
-.Check__info__mainSide {
+.check__info__mainSide__checkBlok {
     width: 960px;
-    height: 100px;
-    background-color: aqua;
+}
+
+.check__info__mainSide__checkTrain {
+    width: 958px;
+    background: #FFFFFF;
+    border: 1px solid rgba(196, 196, 196, 1);
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.3);
+}
+
+.check__info__mainSide__checkPassanger {
+    width: 958px;
+    margin-top: 45px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+}
+
+.check__info__mainSide__checkPay {
+    width: 958px;
+    margin-top: 45px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+}
+
+.check__info__mainSide__line {
+    width: 956px;
+    height: 0px;
+    border: 1px solid rgba(146, 143, 148, 1);
+}
+
+.check__info__mainSide__title {
+    width: 958px;
+    height: 95px;
+    box-sizing: border-box;
+    padding-left: 30px;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 35.16px;
+    text-align: left;
+    color: rgba(41, 41, 41, 1);
+    display: flex;
+    align-items: center;
+}
+
+.check__info__mainSide__passangerBlock {
+    display: flex;
+}
+
+.check__info__mainSide__passangers {
+    width: 679px;
+    border-right: 1px solid rgba(229, 229, 229, 1);
+}
+
+.check__info__mainSide__costBlock {
+    width: 279px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 25px;
+}
+
+.check__info__mainSide__cost {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 25px 0 25px;
+    margin-bottom: 28px;
+}
+
+.check__info__mainSide__costTitle {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 35.16px;
+    text-align: left;
+    color: rgba(41, 41, 41, 1);
+}
+
+.check__info__mainSide__costPrice {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 35.16px;
+    text-align: left;
+    color: rgba(41, 41, 41, 1);
+}
+
+.check__info__mainSide__costPrice > span {
+    color: rgba(146, 143, 148, 1);
+}
+
+.check__info__mainSide__payMethodBlock {
+    display: flex;
+}
+
+.check__info__mainSide__payMethodText {
+    width: 679px;
+    height: 146px;
+    border-right: 1px solid rgba(229, 229, 229, 1);
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 33px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28.13px;
+    text-align: left;
+    color: rgba(41, 41, 41, 1);
+}
+
+.check__info__mainSide__payMethodbtnBlock {
+    width: 279px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.check__info__mainSide__changeBtn {
+    width: 233px;
+    height: 39px;
+    color: rgba(41, 41, 41, 1);
+    border: 1px solid rgba(41, 41, 41, 1);
+    border-radius: 5px; 
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.13px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.check__info__mainSide__changeBtn:hover {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: rgba(255, 168, 0, 1);
+}
+
+.check__info__mainSide__changeBtn:active {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: rgba(41, 41, 41, 1);
+    background: rgba(255, 168, 0, 1);
+    border: 0;
+}
+
+.check__info__mainSide__nextPage {
+    width: 960px;
+    height: 60px;
+    margin-top: 123px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.check__info__mainSide__nextPagebtn {
+    width: 323px;
+    height: 60px;
+    border-radius: 5px;
+    border: 0;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.13px;
+    text-align: center;
+    color: #FFFFFF;
+    background: rgba(255, 168, 0, 1);
+    align-self: flex-end;
+}
+
+.check__info__mainSide__nextPagebtn:hover {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.check__info__mainSide__nextPagebtn:active {
+    background: rgba(0, 0, 0, 0);
+    color: rgba(255, 168, 0, 1);
+    border: 1px solid rgba(255, 168, 0, 1)
 }

@@ -8,6 +8,8 @@ import { Passanger__Block } from './Passanger__Block';
 export const Choose__passangers__mainSide: React.FC = () => {
 
   document.querySelector('.bar2')?.classList.add('active__bar');
+  document.querySelector('.bar3')?.classList.remove('active__bar');
+  document.querySelector('.bar4')?.classList.remove('active__bar');
 
   const location = useLocation();
   const id = location.state;

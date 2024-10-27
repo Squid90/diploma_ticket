@@ -1,5 +1,5 @@
 import './Choose__pay.css'
-import React, { useState } from 'react'
+import React from 'react'
 import { Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
@@ -8,6 +8,7 @@ export const Choose__pay__mainSide: React.FC = () => {
   
   document.querySelector('.bar2')?.classList.add('active__bar');
   document.querySelector('.bar3')?.classList.add('active__bar');
+  document.querySelector('.bar4')?.classList.remove('active__bar');
 
   const navigate = useNavigate();
   const handleSelectPersData = () => {
@@ -39,13 +40,13 @@ export const Choose__pay__mainSide: React.FC = () => {
 
     })
 
-    const [isCheckedOnline, setIsCheckedOnline] = useState(false);
-    const [isCheckedCash, setIsCheckedCash] = useState(false);
     const changeColorTextOnline = () => {
-      setIsCheckedOnline(prevState => !prevState);
+      document.getElementById('radioOnline')?.classList.add('checkboxText_active');
+      document.getElementById('radioCash')?.classList.remove('checkboxText_active');
     }
     const changeColorTextCash = () => {
-      setIsCheckedCash(prevState => !prevState);
+      document.getElementById('radioOnline')?.classList.remove('checkboxText_active');
+      document.getElementById('radioCash')?.classList.add('checkboxText_active');
     }
 
   return (
@@ -141,13 +142,14 @@ export const Choose__pay__mainSide: React.FC = () => {
                 <label className='choose_pay_mainSide_labelCheckbox'>
                   <input
                     className='choose_pay_mainSide_checkbox'
-                    type='checkbox'
+                    type='radio'
+                    name='radio'
                     onChange={changeColorTextOnline} />
                   <span className="choose_pay_mainSide_checkboxMask"></span>
                 </label>
                 <div
                   className='choose_pay_mainSide_checkboxText'
-                  style={{ color: isCheckedOnline ? '#FFA800' : '#928F94' }}>Онлайн</div>
+                  id='radioOnline'>Онлайн</div>
               </div>
               <div className='choose_pay_mainSide_onlinePay_methods'>
                 <div className='choose_pay_mainSide_onlinePay_method'>
@@ -168,13 +170,14 @@ export const Choose__pay__mainSide: React.FC = () => {
                 <label className='choose_pay_mainSide_labelCheckbox'>
                   <input
                     className='choose_pay_mainSide_checkbox'
-                    type='checkbox'
+                    type='radio'
+                    name='radio'
                     onChange={changeColorTextCash} />
                   <span className="choose_pay_mainSide_checkboxMask"></span>
                 </label>
                 <div
                   className='choose_pay_mainSide_checkboxText'
-                  style={{ color: isCheckedCash ? '#FFA800' : '#928F94' }}>Наличными</div>
+                  id='radioCash'>Наличными</div>
               </div>
             </div>
           </Form>
