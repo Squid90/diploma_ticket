@@ -8,6 +8,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Choose__passangers__mainSide } from '../choose__passanger/choose__passangers__mainSide';
 import { Passanger__LeftBlock } from '../choose__passanger/Passanger__LeftBlock';
 import { Choose__pay__mainSide } from '../choose_pay/Choose__pay__mainSide';
+import { Check__info__mainSide } from '../check__info/Check__info__mainSide';
 
 export const Choose__train: React.FC = () => {
   
@@ -35,6 +36,7 @@ export const Choose__train: React.FC = () => {
         <Route path="/chooseplace" element={<Choose__place__mainSide />} />
         <Route path="/chooseplace/choosepassangers" element={<Choose__passangers__mainSide />} />
         <Route path="/chooseplace/choosepassangers/choosepay" element={<Choose__pay__mainSide />} />
+        <Route path="/chooseplace/choosepassangers/choosepay/checkinfo" element={<Check__info__mainSide />} />
       </Routes>
       </div>
     </div>

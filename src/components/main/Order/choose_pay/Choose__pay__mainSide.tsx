@@ -1,17 +1,42 @@
-import { Field, Form, Formik } from 'formik';
 import './Choose__pay.css'
 import React, { useState } from 'react'
+import { Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
+import { useNavigate } from 'react-router-dom';
 
 export const Choose__pay__mainSide: React.FC = () => {
-    document.querySelector('.bar2')?.classList.add('active__bar');
-    document.querySelector('.bar3')?.classList.add('active__bar');
+  
+  document.querySelector('.bar2')?.classList.add('active__bar');
+  document.querySelector('.bar3')?.classList.add('active__bar');
+
+  const navigate = useNavigate();
+  const handleSelectPersData = () => {
+    navigate('/choosetrain/chooseplace/choosepassangers/choosepay/checkinfo', {});
+    
+    window.scrollTo({
+      top: 592,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }
 
     const SignupSchema = Yup.object().shape({
       // surname: Yup.string()
       //   .min(2, 'Фамилия должна содержать минимум 2 буквы')
       //   .max(50, 'Фамилия должна содержать максимум 50 букв')
       //   .required('Фамилия - Обязательное поле'),
+      // name: Yup.string()
+      //   .min(2, 'Имя должна содержать минимум 2 буквы')
+      //   .max(50, 'Имя должна содержать максимум 50 букв')
+      //   .required('Имя - Обязательное поле'),
+      phone: Yup.string()
+        .matches(/^[+][1-9]{1}[-][0-9]{3}[-][0-9]{3}[-][0-9]{4}$/, 'Номер телефона указан неверно. Пример: +7-987-654-3210')
+        .required('Телефон - Обязательное поле'),
+      email: Yup.string()
+        .matches(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, 'Email должен содержать @ и домен. Пример: inbox@example.ru')
+        // .email('Email должен содержать @ и домен. Пример: inbox@example.ru')
+        .required('Email - Обязательное поле'),
+
     })
 
     const [isCheckedOnline, setIsCheckedOnline] = useState(false);
@@ -27,11 +52,12 @@ export const Choose__pay__mainSide: React.FC = () => {
     <div className='choose_pay_mainSide'>
       <div className='choose_pay_mainSide_formData'>
         <Formik 
-          initialValues={{ surname: '', name: '', birthday: '', documentSeries: '', documentNumber: '' }}
+          initialValues={{ surname: '', name: '', phone: '', email: '' }}
           validationSchema={SignupSchema}
           onSubmit={ (values) => {
             console.log(values);
           }}>
+            {({ errors, touched }) => (
           <Form>
             <div className='choose_pay_mainSide_title'>
               Персональные данные
@@ -85,6 +111,23 @@ export const Choose__pay__mainSide: React.FC = () => {
                   name='email'
                   type='text' />
               </div>
+              {(errors.surname && touched.surname) ? (
+                <div className='choose_pay_mainSide_error'>
+                  <div className='choose_pay_mainSide_errorMassege'>{errors.surname}</div>
+                </div>
+              ) : (errors.name && touched.name) ? (
+                <div className='choose_pay_mainSide_error'>
+                  <div className='choose_pay_mainSide_errorMassege'>{errors.name}</div>
+                </div>
+              ) : (errors.phone && touched.phone) ? (
+                <div className='choose_pay_mainSide_error'>
+                  <div className='choose_pay_mainSide_errorMassege'>{errors.phone}</div>
+                </div>
+              ) : (errors.email && touched.email) ? (
+                <div className='choose_pay_mainSide_error'>
+                  <div className='choose_pay_mainSide_errorMassege'>{errors.email}</div>
+                </div>
+              ) : null}
             </div>
             <div className='choose_pay_mainSide_line'></div>
 
@@ -135,10 +178,13 @@ export const Choose__pay__mainSide: React.FC = () => {
               </div>
             </div>
           </Form>
+          )}
         </Formik>
       </div>
       <div className='choose_pay_mainSide_nextPage'>
-            <button className='choose_pay_mainSide_nextPagebtn'>Купить билеты</button>
+            <button
+              className='choose_pay_mainSide_nextPagebtn'
+              onClick={handleSelectPersData}>Купить билеты</button>
       </div>
     </div>
   )
