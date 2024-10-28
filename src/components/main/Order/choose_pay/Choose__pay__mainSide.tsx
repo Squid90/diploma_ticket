@@ -8,6 +8,13 @@ import { data_ticket } from '../data_order/data_order';
 export const Choose__pay__mainSide: React.FC = () => {
 
   const selectedInfo = data_ticket[0];
+
+  setTimeout(() => {
+    const radioOnline = document.getElementById('radioOnline');
+    const radioCash = document.getElementById('radioCash');
+    const payMethodError = document.querySelector('.payMethod_error');
+  }, 1000)
+  
   
   document.querySelector('.bar2')?.classList.add('active__bar');
   document.querySelector('.bar3')?.classList.add('active__bar');
@@ -16,20 +23,25 @@ export const Choose__pay__mainSide: React.FC = () => {
   const navigate = useNavigate();
   const handleSelectPersData = (phone: any, email: any, errors: any) => {
       if (!errors.email && !errors.phone) {
-
-        let payMethod = ''
-        document.getElementById('radioOnline')?.classList.contains('checkboxText_active') ? payMethod = 'Онлайн оплата' : payMethod = 'Наличными';
+        if (document.getElementById('radioOnline')?.classList.contains('checkboxText_active') || document.getElementById('radioCash')?.classList.contains('checkboxText_active')) {
+          let payMethod = ''
+          document.getElementById('radioOnline')?.classList.contains('checkboxText_active') ? payMethod = 'Онлайн оплата' : payMethod = 'Наличными';
       
-        const updatedDataTicket = data_ticket.map(ticket => ({
-          ...ticket,
-          phoneSelect: phone,
-          emailSelect: email,
-          payMethodSelect: payMethod
-        }));
+          const updatedDataTicket = data_ticket.map(ticket => ({
+            ...ticket,
+            phoneSelect: phone,
+            emailSelect: email,
+            payMethodSelect: payMethod
+          }));
         
-        data_ticket.splice(0, 1, updatedDataTicket[0]);
-        navigate('/choosetrain/chooseplace/choosepassangers/choosepay/checkinfo', {});
+          data_ticket.splice(0, 1, updatedDataTicket[0]);
+          navigate('/choosetrain/chooseplace/choosepassangers/choosepay/checkinfo', {});
+        } else {
+          document.querySelector('.payMethod_error')?.classList.remove('hidden');
+        }
       };
+
+
 
       window.scrollTo({
         top: 592,
@@ -41,14 +53,6 @@ export const Choose__pay__mainSide: React.FC = () => {
   
 
     const SignupSchema = Yup.object().shape({
-      // surname: Yup.string()
-      //   .min(2, 'Фамилия должна содержать минимум 2 буквы')
-      //   .max(50, 'Фамилия должна содержать максимум 50 букв')
-      //   .required('Фамилия - Обязательное поле'),
-      // name: Yup.string()
-      //   .min(2, 'Имя должна содержать минимум 2 буквы')
-      //   .max(50, 'Имя должна содержать максимум 50 букв')
-      //   .required('Имя - Обязательное поле'),
       phone: Yup.string()
         .matches(/^[+][1-9]{1}[-][0-9]{3}[-][0-9]{3}[-][0-9]{4}$/, 'Номер телефона указан неверно. Пример: +7-987-654-3210')
         .required('Телефон - Обязательное поле'),
@@ -60,10 +64,12 @@ export const Choose__pay__mainSide: React.FC = () => {
     const changeColorTextOnline = () => {
       document.getElementById('radioOnline')?.classList.add('checkboxText_active');
       document.getElementById('radioCash')?.classList.remove('checkboxText_active');
+      document.querySelector('.payMethod_error')?.classList.add('hidden');
     }
     const changeColorTextCash = () => {
       document.getElementById('radioOnline')?.classList.remove('checkboxText_active');
       document.getElementById('radioCash')?.classList.add('checkboxText_active');
+      document.querySelector('.payMethod_error')?.classList.add('hidden');
     }
 
   return (
@@ -195,6 +201,9 @@ export const Choose__pay__mainSide: React.FC = () => {
                         className='choose_pay_mainSide_checkboxText'
                         id='radioCash'>Наличными</div>
                     </div>
+                  </div>
+                  <div className='choose_pay_mainSide_error payMethod_error hidden'>
+                        <div className='choose_pay_mainSide_errorMassege'>Выберите способ оплаты</div>
                   </div>
                 </div>
                 <div className='choose_pay_mainSide_nextPage'>

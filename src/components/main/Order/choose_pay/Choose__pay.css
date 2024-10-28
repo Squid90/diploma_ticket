@@ -224,3 +224,7 @@
 .checkboxText_active {
     color: #FFA800;
 }
+
+.hidden {
+    display: none;
+}
