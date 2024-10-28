@@ -38,7 +38,7 @@ export const TrainsList__trainCard: React.FC<TrainCardProps> = ({ train }) => {
                     arrivalStationBack={train.arrivalStationBack} />
             </div>
             <div className='trainCard-trainPrice'>
-                < TrainCard__trainPrice dataTrainType={train.dataTrainType} id={train.id} />
+                < TrainCard__trainPrice key={train.id} dataTrainType={train.dataTrainType} id={train.id} />
             </div>
         </div>
     </>

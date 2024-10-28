@@ -6,8 +6,7 @@ import moment from 'moment';
 
 export const Passanger__LeftBlock: React.FC = () => {
     const selectedInfo = data_ticket[0];
-    const currentTrain = data_trainCard[Number(selectedInfo.trainIdSelect) - 1]
-    //console.log (currentTrain);
+    const currentTrain = data_trainCard[Number(selectedInfo.trainIdSelect)]
 
     const [isCollapsedThere, setIsCollapsedThere] = useState<boolean>(true);
     const toggleCollapseThere = () => {

@@ -46,7 +46,8 @@ export const Choose__passangers__mainSide: React.FC = () => {
     <div className='passangers_passangerBlock__nextPage'>
       <button 
         className='passangers_passangerBlock__nextPageBtn'
-        onClick={handleSelectPay}>Далее</button>
+        onClick={handleSelectPay}
+        disabled>Далее</button>
     </div>
     </>
   )

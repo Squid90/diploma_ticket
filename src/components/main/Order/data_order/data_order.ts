@@ -9,8 +9,12 @@ export interface TicketItemProp {
     nameSelect: string;
     middlenameSelect: string;
     birthdaySelect: string;
+    documentTypeSelect: string;
     documentSeriesSelect: string;
     documentNumberSelect: string;
+    phoneSelect: string;
+    emailSelect: string;
+    payMethodSelect: string;
 }
 
 export const data_ticket: TicketItemProp[] = [
@@ -25,7 +29,11 @@ export const data_ticket: TicketItemProp[] = [
         nameSelect: '',
         middlenameSelect: '',
         birthdaySelect: '',
+        documentTypeSelect: '',
         documentSeriesSelect: '',
         documentNumberSelect: '',
+        phoneSelect: '',
+        emailSelect: '',
+        payMethodSelect: '',
     }
 ]

@@ -614,3 +614,9 @@ p {
     color: rgba(255, 168, 0, 1);
     border: 1px solid rgba(255, 168, 0, 1)
 }
+
+.passangers_passangerBlock__nextPageBtn:disabled {
+    background: rgba(146, 143, 148, 1);
+    box-shadow: none;
+    cursor: auto;
+}

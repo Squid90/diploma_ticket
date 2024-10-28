@@ -29,6 +29,8 @@ export const Choose__place__mainSide: React.FC = () => {
   const currentTrain = data_trainCard[id-1];
   const trainIdSelect = id-1;
 
+  
+
   document.querySelector('.bar2')?.classList.remove('active__bar');
 
   let idSeatType = currentTrain.dataTrainType.find(obj => obj.trainType === 'Сидячий');
@@ -101,7 +103,7 @@ export const Choose__place__mainSide: React.FC = () => {
   const ticketPriceSelect = Number(ticketPriceSelectThere) + Number(ticketPriceSelectBack);
   
   const handleSelectPassanger = (trainIdSelect: any, typeWagonThereSelect: any, selectedSeatThere: any, typeWagonBackSelect: any, selectedSeatBack: any, ticketPriceSelect: any) => {
-    navigate('/choosetrain/chooseplace/choosepassangers', { state: selectedSeatThere});
+    navigate('/choosetrain/chooseplace/choosepassangers', {});
     
     window.scrollTo({
       top: 592,

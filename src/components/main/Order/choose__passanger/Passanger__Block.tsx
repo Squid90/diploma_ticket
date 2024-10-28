@@ -1,10 +1,10 @@
 import { Field, Form, Formik } from 'formik';
 import React, { useState } from 'react'
 import * as Yup from 'yup';
+import { data_ticket } from '../data_order/data_order';
 
 export interface BlockProp {
   index: number,
-    
 }
 
 
@@ -28,8 +28,20 @@ export const Passanger__Block: React.FC<BlockProp> = ({ index }) => {
     setIsChecked(!isChecked);
   };
 
-  const nextPassanger = () => {
+  const nextPassanger = (surname: any, name: any, middlename: any, birthday: any, documentSeries: any, documentNumber: any) => {
     
+    const updatedDataTicket = data_ticket.map(ticket => ({
+      ...ticket,
+      surnameSelect: surname,
+      nameSelect: name,
+      middlenameSelect: middlename,
+      birthdaySelect: birthday,
+      documentTypeSelect: documentType,
+      documentSeriesSelect: documentSeries,
+      documentNumberSelect: documentNumber,
+    }));
+  
+    data_ticket.splice(0, 1, updatedDataTicket[0]);
   }
 
   const deletePassanger = () => {
@@ -41,7 +53,7 @@ export const Passanger__Block: React.FC<BlockProp> = ({ index }) => {
   }
 
   const [passengerType, setPassengerType] = useState('adult');
-  const [documentType, setDocumentType] = useState('passport');
+  const [documentType, setDocumentType] = useState('Паспорт РФ');
 
   const SignupSchema = Yup.object().shape({
     surname: Yup.string()
@@ -139,13 +151,13 @@ export const Passanger__Block: React.FC<BlockProp> = ({ index }) => {
         <Formik
           initialValues={{ surname: '', name: '', middlename: '', birthday: '', documentSeries: '', documentNumber: '' }}
           validationSchema={SignupSchema}
-          onSubmit={ (values) => {
-            console.log(values);
+          onSubmit={ () => {
             const parrent = document.getElementById(`Пассажир_${index}`)
             parrent?.querySelector('.passangers_passangerBlock_nextPassanger')?.classList.add('nextPassangerAccess');
+            document.querySelector('.passangers_passangerBlock__nextPageBtn')?.removeAttribute('disabled');
           }}
           > 
-          {({ errors, touched }) => (
+          {({ errors, touched, values }) => (
           <Form className='passangers_passangerBlock_form'>
             <div id='FirstPassanger' className='passangers_passangerBlock_mainInfo'>
               <select
@@ -228,8 +240,8 @@ export const Passanger__Block: React.FC<BlockProp> = ({ index }) => {
                   className='passangers_passangerBlock_document_input input_type'
                   value={documentType}
                   onChange={(e) => setDocumentType(e.target.value)}>
-                    <option value="passport">Паспорт РФ</option>
-                    <option value="foreignPassport">Заграничный паспорт</option>
+                    <option value="Паспорт РФ">Паспорт РФ</option>
+                    <option value="Заграничный паспорт">Заграничный паспорт</option>
                 </select>
                 <Field
                   className='passangers_passangerBlock_document_input input_Serial'
@@ -276,7 +288,14 @@ export const Passanger__Block: React.FC<BlockProp> = ({ index }) => {
 
                   <button
                     className='passangers_passangerBlock_nextPassanger_btn'
-                     onClick={nextPassanger}
+                    onClick={() =>
+                      nextPassanger(
+                        values.surname,
+                        values.name,
+                        values.middlename,
+                        values.birthday,
+                        values.documentSeries,
+                        values.documentNumber)}
                     type="submit">Следующий пассажир
                   </button>
                 </div>
