@@ -18,8 +18,7 @@ export const Choose__passangers__mainSide: React.FC = () => {
       left: 0,
       behavior: 'smooth',
     });
-
-  }
+  };
 
   const [passangerBlocks, setpassangerBlocks] = useState([{ value: '' }]);
 
@@ -27,8 +26,9 @@ export const Choose__passangers__mainSide: React.FC = () => {
     setpassangerBlocks([...passangerBlocks, { value: '' }]);
   };
 
-
-  
+  setTimeout(() => {
+    document.querySelector('.passangers_passangerBlock__nextPageBtn')?.setAttribute('disabled', '');
+  }, 100);
   
   return (
     <>
@@ -47,7 +47,7 @@ export const Choose__passangers__mainSide: React.FC = () => {
       <button 
         className='passangers_passangerBlock__nextPageBtn'
         onClick={handleSelectPay}
-        disabled>Далее</button>
+        >Далее</button>
     </div>
     </>
   )

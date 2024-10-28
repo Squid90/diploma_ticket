@@ -14,24 +14,31 @@ export const Choose__pay__mainSide: React.FC = () => {
   document.querySelector('.bar4')?.classList.remove('active__bar');
 
   const navigate = useNavigate();
-  const handleSelectPersData = (phone: any, email: any) => {
-    navigate('/choosetrain/chooseplace/choosepassangers/choosepay/checkinfo', {});
-    
-    window.scrollTo({
-      top: 592,
-      left: 0,
-      behavior: 'smooth',
-    });
+  const handleSelectPersData = (phone: any, email: any, errors: any) => {
+      if (!errors.email && !errors.phone) {
 
-    const updatedDataTicket = data_ticket.map(ticket => ({
-      ...ticket,
-      phoneSelect: phone,
-      emailSelect: email,
-    }));
+        let payMethod = ''
+        document.getElementById('radioOnline')?.classList.contains('checkboxText_active') ? payMethod = 'Онлайн оплата' : payMethod = 'Наличными';
+      
+        const updatedDataTicket = data_ticket.map(ticket => ({
+          ...ticket,
+          phoneSelect: phone,
+          emailSelect: email,
+          payMethodSelect: payMethod
+        }));
+        
+        data_ticket.splice(0, 1, updatedDataTicket[0]);
+        navigate('/choosetrain/chooseplace/choosepassangers/choosepay/checkinfo', {});
+      };
+
+      window.scrollTo({
+        top: 592,
+        left: 0,
+        behavior: 'smooth',
+      });
+  };
+    
   
-    data_ticket.splice(0, 1, updatedDataTicket[0]);
-    console.log(data_ticket)
-  }
 
     const SignupSchema = Yup.object().shape({
       // surname: Yup.string()
@@ -65,11 +72,10 @@ export const Choose__pay__mainSide: React.FC = () => {
           initialValues={{ surname: '', name: '', phone: '', email: '' }}
           validationSchema={SignupSchema}
           onSubmit={ () => {
-            
           }}>
-            {({ errors, touched, values }) => (<>
-              <div className='choose_pay_mainSide_formData'>
-                <Form>
+            {({ errors, touched, values }) => (
+              <Form>
+                <div className='choose_pay_mainSide_formData'>
                   <div className='choose_pay_mainSide_title'>
                     Персональные данные
                   </div>
@@ -190,14 +196,15 @@ export const Choose__pay__mainSide: React.FC = () => {
                         id='radioCash'>Наличными</div>
                     </div>
                   </div>
-                </Form>
-              </div>
-              <div className='choose_pay_mainSide_nextPage'>
-                    <button
-                      className='choose_pay_mainSide_nextPagebtn'
-                      onClick={() =>
-                        handleSelectPersData (values.phone, values.email)}>Купить билеты</button>
-              </div></>
+                </div>
+                <div className='choose_pay_mainSide_nextPage'>
+                      <button
+                        className='choose_pay_mainSide_nextPagebtn'
+                        type="submit"
+                        onClick={() =>
+                          handleSelectPersData (values.phone, values.email, errors)}>Купить билеты</button>
+                </div>
+              </Form>
             )}
       </Formik>
     </div>

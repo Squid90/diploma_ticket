@@ -254,11 +254,7 @@ export const Passanger__Block: React.FC<BlockProp> = ({ index }) => {
               </div>
             </div>
             <div className='passangers_passangerBlock_line'></div>
-
-
-            
                 <div className='passangers_passangerBlock_nextPassanger'>
-
                   {(errors.surname && touched.surname) ? (
                     <div className='passangers_passangerBlock_error'>
                       <div className='passangers_passangerBlock_closeError' onClick={deleteError}>X</div>

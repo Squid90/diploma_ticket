@@ -1,13 +1,16 @@
 import { useNavigate } from 'react-router-dom';
 import './Check__info.css'
-
 import React from 'react'
 import { TrainsList__trainCard } from '../choose__train/TrainList/trainsList__trainCard';
+import { data_ticket } from '../data_order/data_order';
 
 export const Check__info__mainSide: React.FC = () => {
   document.querySelector('.bar2')?.classList.add('active__bar');
   document.querySelector('.bar3')?.classList.add('active__bar');
   document.querySelector('.bar4')?.classList.add('active__bar');
+
+  const selectedInfo = data_ticket[0];
+  console.log(selectedInfo)
 
   const navigate = useNavigate();
   const handleSelectConfirmData = () => {
@@ -80,7 +83,7 @@ export const Check__info__mainSide: React.FC = () => {
                   Всего
                 </div>
                 <div className='check__info__mainSide__costPrice'>
-                  5 840 <span>P</span>
+                  {selectedInfo.ticketPriceSelect} <span>P</span>
                 </div>
               </div>
               <button
@@ -97,7 +100,7 @@ export const Check__info__mainSide: React.FC = () => {
           <div className='check__info__mainSide__line'></div>
           <div className='check__info__mainSide__payMethodBlock'>
             <div className='check__info__mainSide__payMethodText'>
-              Наличные
+              {selectedInfo.payMethodSelect}
             </div>
             <div className='check__info__mainSide__payMethodbtnBlock'>
               <button
