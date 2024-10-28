@@ -9,13 +9,6 @@ export const Choose__pay__mainSide: React.FC = () => {
 
   const selectedInfo = data_ticket[0];
 
-  setTimeout(() => {
-    const radioOnline = document.getElementById('radioOnline');
-    const radioCash = document.getElementById('radioCash');
-    const payMethodError = document.querySelector('.payMethod_error');
-  }, 1000)
-  
-  
   document.querySelector('.bar2')?.classList.add('active__bar');
   document.querySelector('.bar3')?.classList.add('active__bar');
   document.querySelector('.bar4')?.classList.remove('active__bar');
