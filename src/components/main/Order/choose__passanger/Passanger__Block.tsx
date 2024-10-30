@@ -70,8 +70,8 @@ export const Passanger__Block: React.FC<BlockProp> = ({ index }) => {
         "dates-test",
         "Вам должно быть больше 18 лет",
         (value) => {
-          let today = new Date();
-          let endDate = value;
+          const today = new Date();
+          const endDate = value;
           const yearsOld18 = new Date();
           let check = true
 
@@ -88,8 +88,8 @@ export const Passanger__Block: React.FC<BlockProp> = ({ index }) => {
         "dates-test",
         "Вам должно быть меньше 18 лет",
         (value) => {
-          let today = new Date();
-          let endDate = value;
+          const today = new Date();
+          const endDate = value;
           const yearsOld18 = new Date();
           let check = true
           if (passengerType === 'child') {

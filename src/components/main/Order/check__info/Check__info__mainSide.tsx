@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import './Check__info.css'
 import React from 'react'
-import { TrainsList__trainCard } from '../choose__train/TrainList/trainsList__trainCard';
+// import { TrainsList__trainCard } from '../choose__train/TrainList/trainsList__trainCard';
 import { data_ticket } from '../data_order/data_order';
 
 export const Check__info__mainSide: React.FC = () => {
@@ -23,15 +23,15 @@ export const Check__info__mainSide: React.FC = () => {
     // });
     console.log("Good")
   }
-  const handleReturnToTrain = () => {
-    navigate('/choosetrain', {});
+  // const handleReturnToTrain = () => {
+  //   navigate('/choosetrain', {});
     
-    window.scrollTo({
-      top: 592,
-      left: 0,
-      behavior: 'smooth',
-    });
-  }
+  //   window.scrollTo({
+  //     top: 592,
+  //     left: 0,
+  //     behavior: 'smooth',
+  //   });
+  // }
 
   const handleReturnToPassanger = () => {
     navigate('/choosetrain/chooseplace/choosepassangers', {});

@@ -33,10 +33,10 @@ export const Choose__place__mainSide: React.FC = () => {
 
   document.querySelector('.bar2')?.classList.remove('active__bar');
 
-  let idSeatType = currentTrain.dataTrainType.find(obj => obj.trainType === 'Сидячий');
-  let idPlazcartType = currentTrain.dataTrainType.find(obj => obj.trainType === 'Плацкарт');
-  let idCoupeType = currentTrain.dataTrainType.find(obj => obj.trainType === 'Купе');
-  let idLuxType = currentTrain.dataTrainType.find(obj => obj.trainType === 'Люкс');
+  const idSeatType = currentTrain.dataTrainType.find(obj => obj.trainType === 'Сидячий');
+  const idPlazcartType = currentTrain.dataTrainType.find(obj => obj.trainType === 'Плацкарт');
+  const idCoupeType = currentTrain.dataTrainType.find(obj => obj.trainType === 'Купе');
+  const idLuxType = currentTrain.dataTrainType.find(obj => obj.trainType === 'Люкс');
 
 
 
@@ -127,6 +127,7 @@ export const Choose__place__mainSide: React.FC = () => {
   
   const handleChangeTypeWagonThere = () => {
     document.querySelectorAll('.places__typeWagon__pictureElm').forEach((element,index,item)=>{
+      index=index
       element.addEventListener('click',()=>{
         item.forEach((el)=> {
           const childTxt = el.querySelector('.places__typeWagon__pictureText');
@@ -181,6 +182,7 @@ export const Choose__place__mainSide: React.FC = () => {
 
   const handleChangeTypeWagonBack = () => {
     document.querySelectorAll('.places__typeWagon__pictureElm_Back').forEach((element,index,item)=>{
+      index=index;
       element.addEventListener('click',()=>{
         item.forEach((el)=> {
           const childTxt = el.querySelector('.places__typeWagon__pictureText_Back');

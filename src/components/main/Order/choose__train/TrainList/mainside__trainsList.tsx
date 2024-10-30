@@ -54,19 +54,19 @@ export const Mainside__trainsList: React.FC = () => {
   };
 
   // Функция для сортировки карточек
-  const sortCards = (cards: any[]) => {
-    return cards.sort((a, b) => {
-        if (sortOption === 'time') {
-          return new Date(a.departureTimeThere).getTime() - new Date(b.departureTimeThere).getTime();
-        } else {
-        const durationA = new Date(a.arrivalTimeThere).getTime() - new Date(a.departureTimeThere).getTime();
-        const durationB = new Date(b.arrivalTimeThere).getTime() - new Date(b.departureTimeThere).getTime();
-        return durationA - durationB;
-      }
-    });
-  };
+  // const sortCards = (cards: any[]) => {
+  //   return cards.sort((a, b) => {
+  //       if (sortOption === 'time') {
+  //         return new Date(a.departureTimeThere).getTime() - new Date(b.departureTimeThere).getTime();
+  //       } else {
+  //       const durationA = new Date(a.arrivalTimeThere).getTime() - new Date(a.departureTimeThere).getTime();
+  //       const durationB = new Date(b.arrivalTimeThere).getTime() - new Date(b.departureTimeThere).getTime();
+  //       return durationA - durationB;
+  //     }
+  //   });
+  // };
 
-  const sortedCards = sortCards(data_trainCard);
+  //const sortedCards = sortCards(data_trainCard);
 
   const sliceStart = (currentPage - 1) * itemsPerPage;
   const currentItems = data_trainCard.slice(sliceStart, sliceStart + itemsPerPage);
