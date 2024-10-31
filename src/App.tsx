@@ -10,8 +10,8 @@ import { Header__order } from './components/header/header__order/Header__order';
 const App: React.FC = () => {
   return ( 
     <>
-    <BrowserRouter>
-      <Routes>
+    <BrowserRouter basename='/diploma_ticket'>
+      <Routes >
         <Route path="/" element={<Header />} />
         <Route path="/choosetrain/*" element={<Header__order />} />
       </Routes>
