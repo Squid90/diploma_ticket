@@ -16,7 +16,7 @@ export const Footer = () => {
           <div className='subscription__title'>Подписка</div>
           <div className='subscription__underTitle'>Будьте в курсе событий</div>
           <form className='subscription__form'>
-            <input className='subscription__input' placeholder='e-mail'></input>
+            <input id='subscription__input' className='subscription__input' placeholder='e-mail'></input>
             <button className='subscription__btn'>Отправить</button>
           </form>
           <div className='subscription__social'>Подписывайтесь на нас</div>
