@@ -38,7 +38,7 @@ export default defineConfig({
       metrica
     })
   ],
-  base: '/diploma_ticket/',
+  base: '/diploma_ticket',
   build: {
     outDir: 'dist'
   },
