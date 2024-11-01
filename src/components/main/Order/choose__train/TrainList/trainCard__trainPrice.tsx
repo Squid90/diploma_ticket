@@ -20,6 +20,17 @@ export const TrainCard__trainPrice: React.FC<TrainCardChoosenProps> = ({ dataTra
     });
   };
 
+  const handleReturnToTrain = () => {
+    navigate('/choosetrain', {});
+    
+    window.scrollTo({
+      top: 592,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }
+
+
   return (
       
           <>
@@ -53,6 +64,9 @@ export const TrainCard__trainPrice: React.FC<TrainCardChoosenProps> = ({ dataTra
               <svg viewBox='0 0 512 512' fill='#C4C4C4' ><path d='M511.9,188.953c-0.292-33.388-27.54-60.459-60.989-60.459c-11.309,0-21.901,3.105-30.991,8.492V90.497 c0-8.284-6.716-15-15-15H15c-8.284,0-15,6.716-15,15v215.005h419.919v-23.592c30.307-2.463,53.807-12.629,69.979-30.329 C513.017,226.276,512.236,194.536,511.9,188.953z M467.514,231.6c-10.495,11.327-26.47,18.09-47.595,20.191v-62.277 c0-0.006,0.001-0.013,0.001-0.019c0-17.093,13.901-31.001,30.99-31.001s30.991,13.907,30.991,31.001 c0,0.501,0.007,0.812,0.056,1.297C482.031,191.977,483.207,214.66,467.514,231.6z' stroke='#C4C4C4'></path></svg>
             </div>
               <button className='trainPrice-btn' onClick={() => handleSelectSeat(id)}>Выбрать места</button>
+              <button
+                className='check__info__mainSide__changeBtn hidden'
+                onClick={handleReturnToTrain}>Изменить</button>
           </div>
       </>
   );

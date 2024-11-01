@@ -27,6 +27,38 @@
     transform: none;
 }
 
+.header_background_success {
+    width: 1920px;
+    height: 834px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.header_background_success::before {
+    width: 1970px;
+    height: 834px;
+    position: absolute;
+    content: "";
+    z-index: -1;
+    top: -30px;
+    background: rgb(194, 162, 1);
+}
+
+.header_background_success::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background-image: url("../../pic/Header_success.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 70%;
+    width: 1920px;
+    height: 834px;
+    top: -30px;
+    transform: none;
+}
+
 
 .header__logo {
     width: 1920px;

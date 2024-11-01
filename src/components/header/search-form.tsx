@@ -1,6 +1,21 @@
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+
 
 export const Search__form = () => {
+    
+    const navigate = useNavigate();
+    const handleFindTickets = () => {
+        navigate('/choosetrain', {});
+        
+        window.scrollTo({
+          top: 592,
+          left: 0,
+          behavior: 'smooth',
+        });
+      }
+
+
+
   return (
     <>
     <form className='search__form_main'>
@@ -42,9 +57,11 @@ export const Search__form = () => {
                 <input type='date' className='date-input_main'/>
             </div>
         </div>
-        <Link to="/choosetrain" className="routlink_main">
-            <button className='search-btn_main'>Найти билеты</button>
-        </Link>
+        <div className="routlink_main">
+            <button
+                className='search-btn_main'
+                onClick={handleFindTickets}>Найти билеты</button>
+        </div>
     </form>
     </>
   )

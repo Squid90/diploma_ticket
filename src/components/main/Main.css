@@ -264,6 +264,65 @@ p {
     background: rgba(196, 196, 196, 1);
 }
 
+.main__success {
+    width: 1920px;
+    height: 1080px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 170px;
+}
+
+.main__success_title {
+    position: relative;
+    top: -200px;
+    width: 1404px;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 84.38px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+}
+
+.main__success__mainBlock {
+    width: 1404px;
+    height: 1113px;
+    position: relative;
+    top: -200px;
+    border: 1px solid rgba(196, 196, 196, 1);
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 1);
+}
+
+.main__success__mainBlock__trainInfo {
+    width: 1404px;
+    height: 148px;
+}
+
+.main__success__mainBlock__servises {
+    width: 1404px;
+    height: 312px;
+    background: rgba(244, 243, 246, 1);
+}
+
+.main__success__mainBlock_personalData {
+    width: 1404px;
+    height: 492px;
+}
+
+.main__success__mainBlock__feedback {
+    width: 1404px;
+    height: 161px;
+    background: rgba(255, 168, 0, 0.88);
+}
+
+
+
+
+
+
+
+
 .hidden {
     display: none;
 }

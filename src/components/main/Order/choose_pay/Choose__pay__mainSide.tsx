@@ -29,6 +29,7 @@ export const Choose__pay__mainSide: React.FC = () => {
         
           data_ticket.splice(0, 1, updatedDataTicket[0]);
           navigate('/choosetrain/chooseplace/choosepassangers/choosepay/checkinfo', {});
+        
         } else {
           document.querySelector('.payMethod_error')?.classList.remove('hidden');
         }
