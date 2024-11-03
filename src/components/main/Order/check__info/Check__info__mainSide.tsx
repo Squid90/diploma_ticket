@@ -21,15 +21,13 @@ export const Check__info__mainSide: React.FC = () => {
 
   const selectedInfo = data_ticket[0];
   const currentTrain = data_trainCard[Number(selectedInfo.trainIdSelect)]
-  console.log(currentTrain)
   
-
   const navigate = useNavigate();
   const handleSelectConfirmData = () => {
     navigate('/choosetrain/chooseplace/choosepassangers/choosepay/checkinfo/success', {});
     
     window.scrollTo({
-      top: 592,
+      top: 0,
       left: 0,
       behavior: 'smooth',
     });

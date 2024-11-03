@@ -32,7 +32,6 @@
 .about_text {
     width: 1320px;
     height: 258px;
-    
     font-size: 24px;
     font-weight: 400;
     line-height: 28.13px;
@@ -43,7 +42,6 @@
 }
 
 #span__aboutText {
-    
     font-size: 24px;
     font-weight: 700;
     line-height: 28.13px;
@@ -95,7 +93,6 @@ p {
 .howItWorks {
     width: 50%;
     height: 41px;
-    
     font-size: 36px;
     font-weight: 500;
     line-height: 42.19px;
@@ -130,7 +127,6 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 .widget__circle {
@@ -150,13 +146,11 @@ p {
     background: rgba(229, 229, 229, 0.3);
     border-radius: 90%;
     position: absolute;
-    
 }
 
 .widget__title {
     width: 226px;
     height: 72px;
-    
     font-size: 24px;
     font-weight: 400;
     line-height: 28.13px;
@@ -172,7 +166,6 @@ p {
 
 #widget__link {
     text-decoration: none;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -186,7 +179,6 @@ p {
 
 .reviews_title {
     height: 81px;
-    
     font-size: 36px;
     font-weight: 500;
     line-height: 42.19px;
@@ -221,7 +213,6 @@ p {
 .review__textBlock {
     width: 400px;
     height: 164px;
-    
     padding-left: 35px;
 }
                 
@@ -238,7 +229,6 @@ p {
     font-weight: 300;
     line-height: 21.09px;
     color: rgba(146, 143, 148, 1);
-
 }
 
 .reviews_dots {
@@ -316,12 +306,160 @@ p {
     background: rgba(255, 168, 0, 0.88);
 }
 
+.main__success__mainBlock__trainInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 36px;
+    line-height: 42.19px;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 60px 60px 50px 82px;
+}
+
+.main__success__trainInfo_orderNumber, .main__success__trainInfo_price > span {
+    font-weight: 700;
+    color: rgba(62, 60, 65, 1);
+}
+
+.main__success__trainInfo_price {
+    font-weight: 400;
+    color: rgba(146, 143, 148, 1);
+}
+
+.main__success__mainBlock__servises {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main__success__mainBlock__servise {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.second_servise {
+    margin: 0 145px 0 145px;
+}
 
 
+.main__success__mainBlock__servisePic {
+    width: 155px;
+    height: 155px;
+    background: rgba(255, 182, 40, 0.79);
+    border: 15px solid rgba(255, 255, 255, 1);
+    border-radius: 50%;
+    fill: rgba(255, 255, 255, 1);
+}
 
+.main__success__mainBlock__serviseLbl {
+    margin-top: 11px;
+    width: 180px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.09px;
+    text-align: center;
+    color: rgba(41, 41, 41, 1);
+}
 
+.main__success__mainBlock__serviseLbl > span {
+    font-weight: 500;
+}
 
+.main__success__mainBlock_personalData {
+    box-sizing: border-box;
+    padding: 95px 205px 129px 205px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: rgba(41, 41, 41, 1);
+    text-align: left;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28.13px;
+}
 
+.main__success__personalData__title {
+    font-size: 36px;
+    line-height: 42.19px;
+}
+
+.main__success__personalData__info {
+    font-weight: 400;
+    margin-top: 51px;
+    margin-bottom: 80px;
+}
+
+.main__success__personalData__info > p {
+    margin: 0;
+    padding: 0;
+}
+
+.main__success__mainBlock__feedback {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-left: 83px;
+    padding-right: 78px;
+}
+
+.main__success__feedback_rating {
+    display: flex;
+    align-items: center;
+
+}
+
+.main__success__feedback_ratingLabel {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28.13px;
+    text-align: left;
+    color: rgba(41, 41, 41, 1);
+    margin-right: 20px;
+}
+
+.main__success__feedback_returnBtn {
+    width: 323px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.13px;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid rgba(62, 60, 65, 1);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.main__success__feedback_returnBtn:hover {
+    color: #ffffff;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+}
+
+.main__success__feedback_ratingStars {
+    display: flex;
+    cursor: pointer;
+}
+
+.star {
+    fill: none; 
+    stroke: #ffffff;
+    transition: fill 0.2s ease;
+    margin-right: 20px;
+}
+  
+.star.filled {
+    fill: white; /* Цвет активной звезды */
+}
+  
+.star:hover {
+    fill: white; /* Цвет при наведении */
+}
 
 .hidden {
     display: none;

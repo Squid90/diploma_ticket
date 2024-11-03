@@ -12,8 +12,8 @@ import { Main__success } from './components/main/Main__success';
 const App: React.FC = () => {
   return ( 
     <>
-    <BrowserRouter basename='/diploma_ticket'>
-    {/* <BrowserRouter> */}
+    {/* <BrowserRouter basename='/diploma_ticket'> */}
+    <BrowserRouter>
       <Routes >
         <Route path="/" element={<Header />} />
         <Route path="/choosetrain/*" element={<Header__order />} />
